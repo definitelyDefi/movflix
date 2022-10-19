@@ -27,6 +27,9 @@ export const TypeExpanded = () => {
   const api_key = process.env.REACT_APP_MOVIES_API_KEY;
   let totalPages = useSelector((state) => state.movies.byCategory.totalPages);
   useEffect(() => {
+    dispatch(setCurrentPage(1));
+  }, []);
+  useEffect(() => {
     dispatch(
       getByCategory(
         api_key,
@@ -75,14 +78,19 @@ export const TypeExpanded = () => {
                       navigate(
                         params.content_type === "movies"
                           ? `/movflix/movies/page/${item.id}/${item.title}`
-                          : `/movflix/shows/page/${item.id}/${item.name}`
+                          : params.content_type === "shows"
+                          ? `/movflix/shows/page/${item.id}/${item.name}`
+                          : `/movflix/persons/page/${item.id}/${item.name}`
                       )
                     }
                     className={classes.itemImage}
                     alt={""}
                     src={
-                      item.poster_path !== null
+                      item.poster_path !== null &&
+                      params.content_type !== "persons"
                         ? `https://image.tmdb.org/t/p/original${item.poster_path}`
+                        : item.profile_path !== null
+                        ? `https://image.tmdb.org/t/p/original${item.profile_path}`
                         : poster_placeholder
                     }
                   />
@@ -94,21 +102,38 @@ export const TypeExpanded = () => {
 
                 <div>
                   <div className={classes.itemInfo}>
-                    <h3 className={classes.itemPopularity}>
-                      {item.vote_average !== 0
-                        ? `${item.vote_average}/10`
-                        : "No rating"}
-                    </h3>
-                    <h3 className={classes.itemYear}>
-                      {item.release_date && params.content_type === "movies"
-                        ? item.release_date.slice(0, 4)
-                        : item.first_air_date && params.content_type === "shows"
-                        ? item.first_air_date.slice(0, 4)
-                        : "No year"}
-                    </h3>
-                    <h3 className={classes.itemNsfw}>
-                      {item.vote_count} votes
-                    </h3>
+                    {item.vote_average && params.content_type !== "persons" ? (
+                      <h3 className={classes.itemPopularity}>
+                        {item.vote_average !== 0
+                          ? `${item.vote_average}/10`
+                          : "No rating"}
+                      </h3>
+                    ) : item.known_for ? (
+                      <h3 className={classes.itemPopularity}>
+                        {item.known_for.map((item) => (
+                          <h3 className={classes.itemJobs}>
+                            {item.title || item.name}
+                          </h3>
+                        ))}
+                      </h3>
+                    ) : null}
+
+                    {item.release_date || item.first_air_date ? (
+                      <h3 className={classes.itemYear}>
+                        {item.release_date && params.content_type === "movies"
+                          ? item.release_date.slice(0, 4)
+                          : item.first_air_date &&
+                            params.content_type === "shows"
+                          ? item.first_air_date.slice(0, 4)
+                          : "No year"}
+                      </h3>
+                    ) : null}
+
+                    {item.vote_count ? (
+                      <h3 className={classes.itemNsfw}>
+                        {item.vote_count} votes
+                      </h3>
+                    ) : null}
                   </div>
                 </div>
               </div>

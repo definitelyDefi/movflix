@@ -18,13 +18,15 @@
   font-size: 23px;
   font-weight: 400;
   margin-top: 10px;
-  width: 225px;
+  width: 250px;
   color: white;
 }
 
 .itemInfo {
   display: flex;
-  gap: 35px;
+  column-gap: 35px;
+  width: 250px;
+  flex-wrap: wrap;
 }
 
 .itemInfo > * {
@@ -85,4 +87,7 @@
 .job {
   flex-direction: column;
   gap: 0px;
+}
+.itemJobs {
+  font-size: 1.1em;
 }

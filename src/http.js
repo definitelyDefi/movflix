@@ -424,6 +424,21 @@ export const getByCategory =
             );
           });
       }
+    } else if (content_type === "persons") {
+      if (category === "popular") {
+        await fetch(
+          `https://api.themoviedb.org/3/person/popular?api_key=${API_KEY}&language=en-US&page=${currentPage}`
+        )
+          .then((res) => res.json())
+          .then((result) => {
+            dispatch(
+              setByCategory({
+                results: result.results,
+                totalPages: result.total_pages,
+              })
+            );
+          });
+      }
     }
 
     dispatch(setMoviesFetch(false));
@@ -440,3 +455,5 @@ export const getPerson = (API_KEY, person_id) => async (dispatch) => {
     });
   dispatch(setMoviesFetch(false));
 };
+
+// ' https://api.themoviedb.org/3/person/popular?api_key=<<api_key>>&language=en-US&page=1'

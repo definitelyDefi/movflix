@@ -20,7 +20,7 @@ const SET_CURRENT_PERSON = "SET_CURRENT_PERSON";
 const defaultStore = {
   isError: false,
   latestMovies: [],
-  byCategory: { results: [{}], totalPages: 0 },
+  byCategory: { results: [{ known_for: [] }], totalPages: 0 },
   topMovies: [{ genre_ids: [20], release_date: "" }],
   popularMovies: [{ genre_ids: [20], release_date: "" }],
   upcomingMovies: [{ genre_ids: [20], release_date: "" }],

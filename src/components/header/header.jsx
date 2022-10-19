@@ -90,7 +90,12 @@ export const Header = () => {
             Persons
           </button>
           <div className={classes.dropDownContent}>
-            <button className={classes.linkDropdown}>Popular</button>
+            <button
+              className={classes.linkDropdown}
+              onClick={() => navigate("/movflix/categories/persons/popular")}
+            >
+              Popular
+            </button>
           </div>
         </div>
       </div>

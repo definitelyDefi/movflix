@@ -1,0 +1,77 @@
+.item {
+  align-self: stretch;
+}
+
+.itemTitle {
+  font-size: 23px;
+  font-weight: 400;
+  margin-top: 10px;
+  width: 250px;
+  color: white;
+}
+
+.itemInfo {
+  display: flex;
+  column-gap: 35px;
+  width: 250px;
+  flex-wrap: wrap;
+}
+
+.itemInfo > * {
+  color: #a3a3a3;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+}
+.itemImage {
+  height: 350px;
+  width: 250px;
+  cursor: pointer;
+  transition: 0.4s all ease;
+}
+.itemImage:hover {
+  opacity: 0.4;
+}
+.job {
+  flex-direction: column;
+  gap: 0px;
+}
+.itemJobs {
+  font-size: 1.1em;
+}
+
+@media (max-width: 1000px) and (min-width: 436px) {
+  .itemImage {
+    width: 200px;
+    height: 300px;
+  }
+  .itemTitle {
+    font-size: 23px;
+    max-width: 200px;
+  }
+  .itemInfo {
+    column-gap: 20px;
+    max-width: 200px;
+  }
+
+  .itemInfo > * {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1270px) and (min-width: 1000px) {
+  .itemImage {
+    width: 200px;
+    height: 300px;
+  }
+  .itemTitle {
+    font-size: 23px;
+    max-width: 200px;
+  }
+  .itemInfo {
+    column-gap: 20px;
+    max-width: 200px;
+  }
+
+  .itemInfo > * {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,12 @@
+.container {
+  background-color: #343a40;
+  padding: 35px 35px 40px 35px;
+  min-height: calc(100vh - 70px);
+}
+
+.title {
+  margin-bottom: 50px;
+  text-align: center;
+  color: white;
+  font-family: "Poppins", serif;
+}

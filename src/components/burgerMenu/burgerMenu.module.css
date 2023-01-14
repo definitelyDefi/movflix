@@ -1,0 +1,58 @@
+.burgerLink {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+}
+
+.burgerMenuWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.burgerItem {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #343a40;
+}
+.searchBar {
+  padding-right: 25px;
+  max-width: 350px;
+  color: white;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  font-family: "Poppins", serif;
+}
+.submitButton {
+  background: transparent;
+  outline: none;
+  border: none;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+}
+.submitButton:hover path {
+  fill: #04a6da;
+  transition: 0.3s all ease;
+}
+.searchBar::placeholder {
+  color: white;
+}
+
+.searchField {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto 50px auto;
+}

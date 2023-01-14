@@ -1,0 +1,42 @@
+.page {
+  border: none;
+
+  margin: 0 3px;
+  border-radius: 6px;
+  background: #202020;
+  max-width: auto;
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0 6px;
+  color: white;
+  font-size: 18px;
+}
+.pages {
+  justify-content: center;
+  margin-bottom: 30px;
+  display: flex;
+
+  align-items: center;
+}
+
+.page:hover {
+  opacity: 0.5;
+}
+.page.active {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+@media (max-width: 470px) and (min-width: 200px) {
+  .page {
+    min-width: 30px;
+  }
+  .pages {
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+}

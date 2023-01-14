@@ -1,0 +1,221 @@
+.misc {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.misc > * {
+  font-size: 17px;
+}
+.genres {
+  font-size: 17px;
+}
+.ratings {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.ratingNumber {
+  border: 4px solid #21d07a;
+  outline: 2px solid #081c22;
+  background-color: #081c22;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  border-radius: 100%;
+  padding: 7px;
+  color: white;
+}
+.ratingTitle {
+  font-weight: 600;
+}
+.actionButton {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #032541;
+  border: none;
+  outline: none;
+}
+
+.actionButton:hover {
+  opacity: 0.6;
+}
+
+.tagline {
+  font-size: 20px;
+  font-weight: 200;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.movieTitle {
+  font-weight: 700;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-size: 35px;
+}
+.descriptionText {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.description {
+  font-size: 18px;
+  width: 600px;
+  font-weight: 300;
+}
+
+.ageRating {
+  border: 1px solid white;
+  padding: 2px;
+}
+
+.year,
+.country {
+  color: white;
+}
+
+.genres {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  padding-bottom: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.genre {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 3px;
+  padding: 0 5px;
+  border-radius: 4px;
+  color: white;
+  background: transparent;
+
+  font-size: 14px;
+  height: 36px;
+  word-spacing: 0px;
+  letter-spacing: 0.0892857143em;
+  text-decoration: none;
+  text-transform: uppercase;
+  min-width: 64px;
+  border: 1px solid white;
+  text-align: center;
+}
+.genre:hover {
+  background: #f4f4f4;
+  color: black;
+}
+
+.durationInfo {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+  margin-top: 5px;
+  min-width: 400px;
+  max-width: fit-content;
+}
+.durationInfo > * {
+  font-size: 18px;
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.durationInfo > *:not(:last-child) {
+  border-right: 1px solid white;
+  padding-right: 15px;
+}
+.producers {
+  display: flex;
+  margin-top: 40px;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.name {
+  width: 300px;
+  font-size: 18px;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.job {
+  font-size: 16px;
+  font-weight: 200;
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+}
+
+@media (max-width: 926px) and (min-width: 500px) {
+  .name {
+    max-width: 230px;
+    font-size: 16px;
+  }
+  .job {
+    font-size: 14px;
+  }
+  .producers {
+    position: absolute;
+    left: 0;
+  }
+  .genres {
+    display: block;
+  }
+  .genre {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  .genre {
+    margin-right: 10px;
+  }
+  .description {
+    max-width: 500px;
+  }
+  .misc {
+    flex-wrap: wrap;
+    max-width: 500px;
+  }
+  .producers {
+    margin-top: 10px;
+  }
+  .description {
+    font-size: 16px;
+  }
+  .tagline {
+    font-size: 18px;
+  }
+}
+@media (max-width: 1168px) and (min-width: 926px) {
+  .producers {
+    position: absolute;
+    left: 0;
+  }
+  .description {
+    max-width: 500px;
+  }
+  .misc {
+    flex-wrap: wrap;
+    max-width: 500px;
+  }
+  .producers {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 1380px) and (min-width: 1168px) {
+}

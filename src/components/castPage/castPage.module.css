@@ -1,0 +1,96 @@
+.container {
+  overflow: hidden;
+}
+
+.items {
+  width: 100%;
+  margin-left: 40px;
+  margin-top: 40px;
+  display: flex;
+  gap: 50px;
+}
+.crewBlock {
+  flex-grow: 1;
+}
+.castBlock {
+  flex-shrink: 1;
+}
+
+.castHeader,
+.crewHeader {
+  font-size: 1.4em;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.grayText {
+  color: #656565;
+  font-size: 0.9em;
+  margin-left: 10px;
+}
+.castImage {
+  width: 100px;
+  height: 120px;
+  object-fit: contain;
+}
+.castItem {
+  display: flex;
+  gap: 20px;
+}
+.role {
+  font-size: 1.1em;
+}
+
+.castItems {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 700px;
+}
+
+.castName {
+  text-align: left;
+  margin-bottom: 0px;
+  font-size: 1.3em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s all ease;
+}
+.castName:hover {
+  opacity: 0.5;
+}
+.roles {
+  margin-top: 0px;
+}
+.castInfo {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+.roles,
+.jobs {
+  display: inline;
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+}
+
+.role {
+  display: inline;
+}
+.role:after {
+  content: ", ";
+}
+.role:last-child:after {
+  content: "";
+}
+
+@media (max-width: 1444px) and (min-width: 600px) {
+  .items {
+    flex-direction: column;
+  }
+  .roles {
+    max-width: 500px;
+  }
+}

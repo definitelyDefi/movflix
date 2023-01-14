@@ -1,0 +1,7 @@
+.items {
+  display: flex;
+  gap: 65px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}

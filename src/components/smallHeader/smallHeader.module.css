@@ -1,0 +1,51 @@
+.header {
+  display: flex;
+  gap: 20px;
+  background-color: #03213a;
+  height: 120px;
+  margin-bottom: 20px;
+  padding-left: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.headerTitle {
+  font-weight: 700;
+  font-family: "Poppins", serif;
+  color: white;
+  margin-top: 10px;
+}
+.backButton {
+  font-family: "Poppins", serif;
+  color: white;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.backButton:hover {
+  opacity: 0.6;
+}
+
+.headerImage {
+  width: 57px;
+  height: 87px;
+}
+
+/* @media (max-width: 1688px) and (min-width: 600px) {
+  .itemImage {
+    height: 300px;
+    width: 200px;
+  }
+  .items {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .item {
+    align-self: stretch;
+  }
+  .viewMore {
+    position: absolute;
+    top: -70px;
+    left: 160px;
+  }
+} */

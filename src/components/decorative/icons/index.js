@@ -1,0 +1,10 @@
+export { JustWatch } from "./justWatch";
+export { Facebook } from "./facebook";
+export { Twitter } from "./twitter";
+export { Homepage } from "./homepage";
+export { Instagram } from "./instagram";
+export { Bookmark } from "./bookmark";
+export { Heart } from "./heart";
+export { List } from "./list";
+export { Star } from "./star";
+export { Imdb } from "./imdb";

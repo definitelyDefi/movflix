@@ -1,0 +1,34 @@
+.blueButton {
+  display: block;
+  background: #339dff;
+  color: #fff;
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 38px;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 70%;
+
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  margin-top: 53%;
+}
+
+.blueButton:hover {
+  background: #fff;
+  color: #339dff;
+  box-shadow: 0 4px 4px rgba(83, 100, 255, 0.32);
+}
+.backButton {
+  font-family: "Poppins", serif;
+  color: white;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.backButton:hover {
+  opacity: 0.6;
+}

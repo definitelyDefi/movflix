@@ -1,0 +1,75 @@
+.social {
+  width: 50px;
+  height: 50;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+.social:hover {
+  opacity: 0.6;
+}
+.socials {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.info {
+  display: flex;
+  gap: 300px;
+}
+
+.wrapper {
+  margin-top: 30px;
+}
+
+.suptitle {
+  font-size: 1em;
+  font-weight: 700 !important;
+  margin-bottom: 3px;
+}
+.subtext {
+  font-size: 1em;
+}
+.title {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+.knownAs {
+  padding: 0;
+  list-style: none;
+}
+
+.social {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.social > * {
+  min-width: 50px;
+  max-width: 100px;
+  height: 50px;
+}
+@media (max-width: 436px) and (min-width: 320px) {
+  .wrapper {
+    width: fit-content;
+  }
+}
+
+@media (max-width: 642px) and (min-width: 436px) {
+  .socials {
+    flex-direction: column;
+    justify-content: left;
+  }
+  .social > * {
+    width: 60px;
+  }
+  .wrapper {
+    width: fit-content;
+  }
+}
+@media (max-width: 1294px) and (min-width: 642px) {
+  .wrapper {
+    width: fit-content;
+  }
+}

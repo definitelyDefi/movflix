@@ -1,0 +1,81 @@
+.social {
+  width: 50px;
+  height: 50;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+.social:hover {
+  opacity: 0.6;
+}
+.socials {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.info {
+  display: flex;
+  gap: 300px;
+}
+
+.wrapper {
+  margin-left: 65px;
+}
+
+.suptitle {
+  font-size: 23px;
+  font-weight: 600 !important;
+  margin-bottom: 3px;
+}
+.subtext {
+  font-size: 20px;
+}
+
+.keywords {
+  display: flex;
+  width: 350px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.keyword {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid #d7d7d7;
+  color: #000;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.forShow {
+  flex-direction: column;
+  gap: 20px;
+  padding-right: 20px;
+}
+.networkImage {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.networkItem {
+  min-width: 50px;
+  max-width: 80px;
+  height: 50px;
+}
+.networks {
+  margin-top: 10px;
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 850px) and (min-width: 500px) {
+  .info {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media (max-width: 1050px) and (min-width: 850px) {
+  .info {
+    gap: 100px;
+  }
+}

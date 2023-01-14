@@ -1,0 +1,64 @@
+.episode {
+  gap: 20px;
+  display: flex;
+  min-height: 175px;
+  max-height: fit-content;
+  max-width: 1250px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px auto 40px auto;
+
+  border-radius: 8px;
+}
+
+.episodeMisc {
+  font-size: 1em;
+  font-weight: 600;
+  font-family: "Poppins", serif;
+}
+.episodeImage {
+  width: 227px;
+  height: 127px;
+
+  border-top-left-radius: 8px;
+}
+.episodeTitle {
+  font-weight: 600;
+  font-size: 1.5em;
+  font-family: "Poppins", serif;
+  display: inline;
+}
+
+.episodeDescription {
+  font-family: "Poppins", serif;
+  margin-top: 20px;
+  display: block;
+  max-width: 950px;
+}
+.episodeInfo {
+  padding-top: 10px;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+.episodeTitle,
+.episodeMisc {
+  width: fit-content;
+}
+
+.episodeNumber {
+  margin-right: 10px;
+}
+
+@media (max-width: 1282px) and (min-width: 600px) {
+  .episode {
+    gap: 20px;
+
+    min-height: 175px;
+    max-height: fit-content;
+    max-width: 1250px;
+
+    margin: 10px 10px 40px 10px;
+  }
+}

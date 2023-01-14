@@ -1,0 +1,142 @@
+.profileImage {
+  height: 450px;
+  width: 300px;
+  border-radius: 8px;
+}
+
+.container {
+  padding: 40px 270px;
+  display: flex;
+  gap: 50px;
+}
+.name {
+  margin-top: 10px;
+  font-weight: 700;
+}
+.bioTitle {
+  margin-top: 40px;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+.bio {
+  max-width: 890px;
+  margin-top: 20px;
+}
+.rolesTitle {
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.rolesBlock {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(227, 227, 227, 1);
+  background-color: #fff;
+  padding: 20px;
+}
+.role {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 10px;
+}
+.roleYear {
+  font-size: 1em;
+  font-weight: 700;
+}
+.roleName {
+  font-size: 1em;
+}
+.roleName > span {
+  font-weight: 700;
+  cursor: pointer;
+}
+.roleName > span:hover {
+  opacity: 0.6;
+}
+.roles {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 20px;
+}
+.roles:last-child {
+  margin-bottom: 0px;
+}
+.roleList {
+  display: flex;
+  gap: 40px;
+  border-bottom: 1px solid rgba(230, 230, 230, 1);
+  padding-top: 15px;
+}
+.roleList:last-child {
+  border: none;
+}
+
+.posterImage {
+  width: 300px;
+  height: 450px;
+  border-radius: 10px;
+}
+
+@media (max-width: 436px) and (min-width: 320px) {
+  .posterImage {
+    width: 250px;
+    height: 390px;
+    margin: 0 auto;
+  }
+
+  .container {
+    padding: 10px 30px;
+    flex-direction: column;
+  }
+  .leftBlock {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 642px) and (min-width: 436px) {
+  .posterImage {
+    width: 230px;
+    height: 370px;
+  }
+  .rightBlock {
+    position: relative;
+  }
+
+  .container {
+    padding: 10px 30px;
+    flex-direction: column;
+  }
+  .leftBlock {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+  }
+}
+@media (max-width: 1294px) and (min-width: 642px) {
+  .rightBlock {
+    position: relative;
+  }
+
+  .container {
+    padding: 20px 30px;
+    flex-direction: column;
+  }
+  .leftBlock {
+    display: flex;
+    gap: 50px;
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 1358px) and (min-width: 1294px) {
+  .container {
+    padding: 20px 30px;
+  }
+}
+@media (max-width: 1564px) and (min-width: 1358px) {
+  .container {
+    padding: 40px 100px;
+  }
+}

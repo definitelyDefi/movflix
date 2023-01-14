@@ -1,0 +1,51 @@
+.carousel {
+  margin: -50px 60px 0 60px;
+  max-width: 100vw;
+  padding-bottom: 40px;
+}
+
+.title {
+  color: black;
+  margin-bottom: 30px;
+  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  background: #21d07a;
+  width: 100px;
+  height: 4px;
+  margin-top: 10px;
+}
+/* 
+:global(.slick-arrow) {
+  color: black;
+} */
+
+:global(button.slick-next:before) {
+  content: url("./../../../assets/arrow-right-circle.svg");
+}
+:global(button.slick-prev:before) {
+  content: url("./../../../assets/arrow-left-circle.svg");
+}
+
+:global(.slick-prev) {
+  left: -40px;
+}
+:global(.slick-next) {
+  right: -40px;
+}
+:global(.slick-prev:hover) {
+  opacity: 0.7;
+}
+:global(.slick-next:hover) {
+  opacity: 0.7;
+}
+
+@media (max-width: 1748px) and (min-width: 0) {
+  .carousel {
+    display: none;
+  }
+}

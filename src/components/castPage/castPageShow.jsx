@@ -1,31 +1,23 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import classes from "./castPage.module.css";
-import { useEffect } from "react";
 import { getShowSearchCrew } from "../../http";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import person_placeholder from "./../../assets/person_placeholder.jpg";
-import Preloader from "../decorative/preloader/preloader";
-import { SmallHeader } from "../smallHeader/smallHeader";
-const CastPageShow = () => {
+import { SmallHeader, Preloader } from "../";
+
+export const CastPageShow = () => {
   let dispatch = useDispatch();
   let params = useParams();
-  const api_key = process.env.REACT_APP_MOVIES_API_KEY;
   let navigate = useNavigate();
   let title = useSelector((state) => state.movies.currentShow.name);
   let date = useSelector((state) => state.movies.currentShow.first_air_date);
-  let full_credits = useSelector(
-    (state) => state.movies.currentShow.full_credits
-  );
-  let headerImage = useSelector(
-    (state) => state.movies.currentShow.poster_path
-  );
+  let full_credits = useSelector((state) => state.movies.currentShow.full_credits);
+  let headerImage = useSelector((state) => state.movies.currentShow.poster_path);
   let isFetching = useSelector((state) => state.movies.isFetching);
   useEffect(() => {
-    dispatch(getShowSearchCrew(api_key, params.id));
-  }, [params.id, api_key, dispatch]);
+    dispatch(getShowSearchCrew(params.id));
+  }, [params.id, dispatch]);
 
   return (
     <div className={classes.container}>
@@ -33,20 +25,11 @@ const CastPageShow = () => {
         <Preloader />
       ) : (
         <div>
-          <SmallHeader
-            headerImage={headerImage}
-            title={title}
-            date={date}
-            text={"Back to show"}
-            padding={"250"}
-          />
+          <SmallHeader headerImage={headerImage} title={title} date={date} text={"Back to show"} padding={"250"} />
           <div className={classes.items}>
             <div className={classes.castBlock}>
               <h1 className={classes.castHeader}>
-                The cast of the series{" "}
-                <span className={classes.grayText}>
-                  {full_credits.cast.length}
-                </span>
+                The cast of the series <span className={classes.grayText}>{full_credits.cast.length}</span>
               </h1>
               <div className={classes.castItems}>
                 {full_credits.cast.map((person) => (
@@ -59,20 +42,12 @@ const CastPageShow = () => {
                           : person_placeholder
                       }
                       alt={""}
-                      onClick={() =>
-                        navigate(
-                          `/movflix/persons/page/${person.id}/${person.name}`
-                        )
-                      }
+                      onClick={() => navigate(`/movflix/persons/page/${person.id}/${person.name}`)}
                     />
                     <div className={classes.castInfo}>
                       <h3
                         className={classes.castName}
-                        onClick={() =>
-                          navigate(
-                            `/movflix/persons/page/${person.id}/${person.name}`
-                          )
-                        }
+                        onClick={() => navigate(`/movflix/persons/page/${person.id}/${person.name}`)}
                       >
                         {person.name}
                       </h3>
@@ -81,9 +56,7 @@ const CastPageShow = () => {
                           role.character ? (
                             <li className={classes.role}>
                               {role.character}
-                              <span className={classes.grayText}>
-                                {role.episode_count} episodes
-                              </span>
+                              <span className={classes.grayText}>{role.episode_count} episodes</span>
                             </li>
                           ) : null
                         )}
@@ -96,9 +69,7 @@ const CastPageShow = () => {
             <div className={classes.crewBlock}>
               <h1 className={classes.crewHeader}>
                 The crew of the series
-                <span className={classes.grayText}>
-                  {full_credits.crew.length}
-                </span>
+                <span className={classes.grayText}>{full_credits.crew.length}</span>
               </h1>
               <div className={classes.castItems}>
                 {full_credits.crew.map((person) => (
@@ -111,20 +82,12 @@ const CastPageShow = () => {
                           : person_placeholder
                       }
                       alt={""}
-                      onClick={() =>
-                        navigate(
-                          `/movflix/persons/page/${person.id}/${person.name}`
-                        )
-                      }
+                      onClick={() => navigate(`/movflix/persons/page/${person.id}/${person.name}`)}
                     />
                     <div className={classes.castInfo}>
                       <h3
                         className={classes.castName}
-                        onClick={() =>
-                          navigate(
-                            `/movflix/persons/page/${person.id}/${person.name}`
-                          )
-                        }
+                        onClick={() => navigate(`/movflix/persons/page/${person.id}/${person.name}`)}
                       >
                         {person.name}
                       </h3>
@@ -133,9 +96,7 @@ const CastPageShow = () => {
                           job.job ? (
                             <li className={classes.role}>
                               {job.job}
-                              <span className={classes.grayText}>
-                                {job.episode_count} episodes
-                              </span>
+                              <span className={classes.grayText}>{job.episode_count} episodes</span>
                             </li>
                           ) : null
                         )}
@@ -151,5 +112,3 @@ const CastPageShow = () => {
     </div>
   );
 };
-
-export default CastPageShow;

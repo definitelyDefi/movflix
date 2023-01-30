@@ -1,0 +1,113 @@
+.sliderElement {
+  margin-right: 10px;
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 400;
+  margin-top: 10px;
+  width: 300px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.title:hover {
+  opacity: 0.5;
+}
+
+.info {
+  display: flex;
+  gap: 20px;
+}
+
+.info > * {
+  color: #a3a3a3;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  color: white;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+  max-width: fit-content;
+}
+
+.header::after {
+  content: "";
+  display: block;
+  background: orange;
+  width: calc(100% - 50px);
+  height: 4px;
+  margin-top: 10px;
+}
+
+.image {
+  width: 300px;
+  height: 450px;
+  cursor: pointer;
+  transition: 0.4s all ease;
+}
+.image:hover {
+  opacity: 0.4;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.link {
+  text-decoration: none;
+  color: white;
+}
+.link:hover {
+  color: white;
+  opacity: 0.4;
+}
+.button {
+  display: block;
+  background: #339dff;
+  color: #fff;
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 38px;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 70%;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  margin-top: 53%;
+}
+
+.image,
+.info > *,
+.title {
+  user-select: none;
+}

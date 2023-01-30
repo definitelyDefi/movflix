@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import classes from "./searchBar.module.css";
 
-const SearchBar = () => {
+export const SearchBar = () => {
   const [query, setQuery] = useState("");
   let navigate = useNavigate();
   return (
@@ -27,5 +27,3 @@ const SearchBar = () => {
     </div>
   );
 };
-
-export default SearchBar;

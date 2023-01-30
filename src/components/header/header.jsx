@@ -3,7 +3,7 @@ import classes from "./header.module.css";
 import logo from "./../../assets/logo100.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import BurgerMenu from "../burgerMenu/burgerMenu";
+import { BurgerMenu } from "./../";
 
 export const Header = () => {
   let navigate = useNavigate();
@@ -22,81 +22,48 @@ export const Header = () => {
   return (
     <>
       <div className={classes.container}>
-        <div
-          className={classes.logoBlock}
-          onClick={() => navigate("/movflix/")}
-        >
+        <div className={classes.logoBlock} onClick={() => navigate("/movflix/")}>
           <img src={logo} className={classes.logo} alt="" />
           <h3 className={classes.logoText}>Movflix</h3>
         </div>
         <div className={classes.items}>
           <div className={classes.dropDown}>
-            <button className={`${classes.link} ${classes.withDropdown}`}>
-              Movies
-            </button>
+            <button className={`${classes.link} ${classes.withDropdown}`}>Movies</button>
             <div className={classes.dropDownContent}>
-              <button
-                className={classes.linkDropdown}
-                onClick={() => navigate("/movflix/categories/movies/popular")}
-              >
+              <button className={classes.linkDropdown} onClick={() => navigate("/movflix/categories/movie/popular")}>
                 Popular
               </button>
-              <button
-                className={classes.linkDropdown}
-                onClick={() => navigate("/movflix/categories/movies/upcoming")}
-              >
+              <button className={classes.linkDropdown} onClick={() => navigate("/movflix/categories/movie/upcoming")}>
                 Upcoming
               </button>
-              <button
-                className={classes.linkDropdown}
-                onClick={() => navigate("/movflix/categories/movies/latest")}
-              >
+              <button className={classes.linkDropdown} onClick={() => navigate("/movflix/categories/movie/latest")}>
                 Latest
               </button>
-              <button
-                className={classes.linkDropdown}
-                onClick={() => navigate("/movflix/categories/movies/top rated")}
-              >
+              <button className={classes.linkDropdown} onClick={() => navigate("/movflix/categories/movie/top_rated")}>
                 Best
               </button>
             </div>
           </div>
 
           <div className={classes.dropDown}>
-            <button className={`${classes.link} ${classes.withDropdown}`}>
-              Shows
-            </button>
+            <button className={`${classes.link} ${classes.withDropdown}`}>Shows</button>
             <div className={classes.dropDownContent}>
-              <button
-                className={classes.linkDropdown}
-                onClick={() => navigate("/movflix/categories/shows/popular")}
-              >
+              <button className={classes.linkDropdown} onClick={() => navigate("/movflix/categories/tv/popular")}>
                 Trending
               </button>
-              <button
-                className={classes.linkDropdown}
-                onClick={() => navigate("/movflix/categories/shows/latest")}
-              >
+              <button className={classes.linkDropdown} onClick={() => navigate("/movflix/categories/tv/on_the_air")}>
                 On air now
               </button>
-              <button
-                className={classes.linkDropdown}
-                onClick={() => navigate("/movflix/categories/shows/top rated")}
-              >
+              <button className={classes.linkDropdown} onClick={() => navigate("/movflix/categories/tv/top_rated")}>
                 Best
               </button>
             </div>
           </div>
 
           <div className={classes.dropDown}>
-            <button className={`${classes.link} ${classes.withDropdown}`}>
-              Persons
-            </button>
+            <button className={`${classes.link} ${classes.withDropdown}`}>Persons</button>
             <div className={classes.dropDownContent}>
-              <button
-                className={classes.linkDropdown}
-                onClick={() => navigate("/movflix/categories/persons/popular")}
-              >
+              <button className={classes.linkDropdown} onClick={() => navigate("/movflix/categories/person/popular")}>
                 Popular
               </button>
             </div>
@@ -125,10 +92,7 @@ export const Header = () => {
           </button>
         </div>
         <div className={classes.items}>
-          <button
-            className={classes.link}
-            onClick={() => navigate("/mofvlix/about")}
-          >
+          <button className={classes.link} onClick={() => navigate("/mofvlix/about")}>
             About
           </button>
         </div>
@@ -137,13 +101,12 @@ export const Header = () => {
           width="32"
           height="32"
           fill="white"
-          class="bi bi-list"
           viewBox="0 0 16 16"
           className={classes.burgerIcon}
           onClick={() => setMenuEnabled(!menuEnabled)}
         >
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
           />
         </svg>

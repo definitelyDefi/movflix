@@ -2,3 +2,7 @@
   background-color: #343a40;
   overflow: hidden;
 }
+
+.wrapper {
+  padding: 0 30px;
+}

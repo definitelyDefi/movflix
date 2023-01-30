@@ -3,7 +3,7 @@ import classes from "./burgerMenu.module.css";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-const BurgerMenu = ({ status }) => {
+export const BurgerMenu = ({ status }) => {
   const [query, setQuery] = useState("");
   let navigate = useNavigate();
   const handleKeypress = (e) => {
@@ -114,5 +114,3 @@ const BurgerMenu = ({ status }) => {
 
   return null;
 };
-
-export default BurgerMenu;

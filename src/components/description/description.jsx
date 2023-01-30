@@ -31,7 +31,7 @@ export function Description({ data, type }) {
         {data.genres ? (
           <div className={classes.genres}>
             {data.genres.map((item) => (
-              <button className={classes.genre} value={item.id}>
+              <button className={classes.genre} value={item.id} key={item.id}>
                 {item.name}
               </button>
             ))}

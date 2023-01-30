@@ -153,9 +153,9 @@ export const DetailsBlock = (props) => {
             <div>
               <h3 className={classes.suptitle}>TV Networks</h3>
               <div className={classes.networks}>
-                {content.networks.map((network) =>
+                {content.networks.map((network, i) =>
                   network.logo_path ? (
-                    <div className={classes.networkItem}>
+                    <div className={classes.networkItem} key={i}>
                       <img
                         src={`https://image.tmdb.org/t/p/original${network.logo_path}`}
                         alt={""}

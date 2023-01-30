@@ -10,19 +10,13 @@ export function TypeItem({ content_type, item, onLoad }) {
     <div className={classes.item}>
       <LazyLoad once>
         <img
-          onClick={() =>
-            navigate(
-              `/movflix/${content_type}/page/${item.id}/${
-                item.title || item.name
-              }`
-            )
-          }
+          onClick={() => navigate(`/movflix/${content_type}/page/${item.id}/${item.title || item.name}`)}
           className={classes.itemImage}
           alt={""}
           src={
-            item.poster_path !== null && content_type !== "persons"
+            item.poster_path !== null && content_type !== "person"
               ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
-              : item.profile_path !== null
+              : item.profile_path
               ? `https://image.tmdb.org/t/p/w500${item.profile_path}`
               : poster_placeholder
           }
@@ -34,9 +28,7 @@ export function TypeItem({ content_type, item, onLoad }) {
       <div>
         <div className={classes.itemInfo}>
           {item.vote_average && content_type !== "persons" ? (
-            <h3 className={classes.itemPopularity}>
-              {`${item.vote_average}/10`}
-            </h3>
+            <h3 className={classes.itemPopularity}>{`${item.vote_average}/10`}</h3>
           ) : item.known_for ? (
             <h3 className={classes.itemPopularity}>
               {item.known_for.map((item) => (

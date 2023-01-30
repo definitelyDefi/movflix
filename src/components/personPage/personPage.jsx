@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
-import { Header } from "../header/header";
 import classes from "./personPage.module.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getPerson } from "../../http";
-import { PersonDetails } from "../personDetails/personDetails";
 import { get_cast } from "../../helpers/sortPersonRoles";
-import Preloader from "../decorative/preloader/preloader";
+import { Preloader, PersonDetails, Header } from "../";
 
 import poster_placeholder from "./../../assets/person_placeholder.jpg";
 
@@ -14,15 +12,14 @@ export const PersonPage = () => {
   let dispatch = useDispatch();
   let params = useParams();
   let navigate = useNavigate();
-  const api_key = process.env.REACT_APP_MOVIES_API_KEY;
-  let person = useSelector((state) => state.movies.currentPerson);
-  let isFetching = useSelector((state) => state.movies.isFetching);
+  let person = useSelector((state) => state.person.currentPerson);
+  let isFetching = useSelector((state) => state.global.isFetching);
   let rolesHistory = get_cast(person.combined_credits.cast);
   const reversedKeys = Object.keys(rolesHistory).reverse();
 
   useEffect(() => {
-    dispatch(getPerson(api_key, params.id));
-  }, [api_key, dispatch, params.id]);
+    dispatch(getPerson(params.id));
+  }, [dispatch, params.id]);
 
   return (
     <div>
@@ -36,9 +33,7 @@ export const PersonPage = () => {
               className={classes.posterImage}
               alt=""
               src={
-                person.profile_path
-                  ? `https://image.tmdb.org/t/p/original${person.profile_path}`
-                  : poster_placeholder
+                person.profile_path ? `https://image.tmdb.org/t/p/original${person.profile_path}` : poster_placeholder
               }
             />
             <PersonDetails
@@ -74,12 +69,8 @@ export const PersonPage = () => {
                             <span
                               onClick={() => {
                                 item.media_type === "tv"
-                                  ? navigate(
-                                      `/movflix/shows/page/${item.id}/${item.title}`
-                                    )
-                                  : navigate(
-                                      `/movflix/movies/page/${item.id}/${item.title}`
-                                    );
+                                  ? navigate(`/movflix/shows/page/${item.id}/${item.title}`)
+                                  : navigate(`/movflix/movies/page/${item.id}/${item.title}`);
                               }}
                             >
                               {item.title}

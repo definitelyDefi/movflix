@@ -6,11 +6,10 @@ export function Episodes({ season }) {
   return (
     <div>
       <h3 className={classes.episodesCount}>
-        Episodes{" "}
-        <span className={classes.grayText}>{season.episodes.length}</span>
+        Episodes <span className={classes.grayText}>{season.episodes.length}</span>
       </h3>
-      {season.episodes.map((episode) => (
-        <Episode episode={episode} />
+      {season.episodes.map((episode, i) => (
+        <Episode episode={episode} key={i} />
       ))}
     </div>
   );

@@ -70,7 +70,7 @@ export const CastCarousel = (props) => {
       <Slider {...settings}>
         {items.map((item) => {
           return (
-            <div className={classes.sliderElement}>
+            <div className={classes.sliderElement} key={item.name}>
               <img
                 draggable={false}
                 className={classes.sliderImage}

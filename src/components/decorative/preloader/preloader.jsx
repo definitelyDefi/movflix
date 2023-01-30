@@ -1,8 +1,7 @@
 import React from "react";
 import classes from "./preloader.module.css";
 
-export default function Preloader(props) {
-  let { variant } = props;
+export const Preloader = ({ variant }) => {
   return (
     <div className={classes.fetching}>
       <svg viewBox="0 0 100 100">
@@ -30,4 +29,4 @@ export default function Preloader(props) {
       </svg>
     </div>
   );
-}
+};

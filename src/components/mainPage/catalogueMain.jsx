@@ -1,33 +1,21 @@
 import React, { useEffect } from "react";
 import classes from "./catalogueMain.module.css";
-import {
-  SmallCarousel,
-  FullscreenCarousel,
-  MediumCarousel,
-} from "../carousels";
-
-import SearchBar from "../searchBar/searchBar";
 import { getMainPageMovies } from "../../http";
 import { useDispatch, useSelector } from "react-redux/es/exports";
-import Preloader from "../decorative/preloader/preloader";
-import { useNavigate } from "react-router";
-import { Header } from "../header/header";
+import { Header, Preloader, FsCarousel, MdCarousel, SmCarousel, SearchBar } from "../";
 
 export const CatalogueMain = () => {
-  const api_key = process.env.REACT_APP_MOVIES_API_KEY;
   const dispatch = useDispatch();
-  let isFetching = useSelector((state) => state.movies.isFetching);
+  let isFetching = useSelector((state) => state.global.isFetching);
+  const latestMovies = useSelector((state) => state.movies.latestMovies);
+  const topShows = useSelector((state) => state.shows.topShows);
+  const popularMovies = useSelector((state) => state.movies.popularMovies);
+  const popularShows = useSelector((state) => state.shows.popularShows);
+  const upcomingMovies = useSelector((state) => state.movies.upcomingMovies);
 
   useEffect(() => {
-    dispatch(getMainPageMovies(api_key));
-  }, [api_key, dispatch]);
-  let navigate = useNavigate();
-
-  const latestMovies = useSelector((state) => state.movies.latestMovies);
-  const topShows = useSelector((state) => state.movies.topShows);
-  const popularMovies = useSelector((state) => state.movies.popularMovies);
-  const popularShows = useSelector((state) => state.movies.popularShows);
-  const upcomingMovies = useSelector((state) => state.movies.upcomingMovies);
+    dispatch(getMainPageMovies());
+  }, [dispatch]);
 
   return (
     <div>
@@ -36,35 +24,41 @@ export const CatalogueMain = () => {
         {isFetching === true ? (
           <Preloader />
         ) : (
-          <div>
-            <FullscreenCarousel items={latestMovies} />
+          <>
+            <FsCarousel items={latestMovies} />
 
-            <SmallCarousel
-              items={topShows}
-              title={"Top rated shows"}
-              onClick={() => navigate(`/movflix/categories/shows/top rated`)}
-              type="show"
-            />
+            <div className={classes.wrapper}>
+              <SmCarousel
+                header={"Top rated shows"}
+                isLight={false}
+                items={topShows}
+                moreButton={`/movflix/categories/movies/top rated`}
+                marginTop={"30px"}
+              />
 
-            <MediumCarousel
-              items={popularMovies}
-              title={"Trending movies"}
-              onClick={() => navigate(`/movflix/categories/movies/popular`)}
-            />
-            <SearchBar />
+              <MdCarousel
+                header={"Trending movies"}
+                items={popularMovies}
+                moreButton={`/movflix/categories/movies/popular`}
+                marginTop={"30px"}
+              />
+              <SearchBar />
 
-            <MediumCarousel
-              items={popularShows}
-              title={"Popular shows"}
-              onClick={() => navigate(`/movflix/categories/shows/popular`)}
-            />
+              <MdCarousel
+                header={"Popular shows"}
+                items={popularShows}
+                moreButton={`/movflix/categories/shows/popular`}
+                marginTop={"30px"}
+              />
 
-            <SmallCarousel
-              items={upcomingMovies}
-              title={"Upcoming movies"}
-              onClick={() => navigate(`/movflix/categories/movies/upcoming`)}
-            />
-          </div>
+              <SmCarousel
+                header={"Upcoming movies"}
+                isLight={false}
+                items={upcomingMovies}
+                moreButton={`/movflix/categories/movies/upcoming`}
+              />
+            </div>
+          </>
         )}
       </div>
     </div>

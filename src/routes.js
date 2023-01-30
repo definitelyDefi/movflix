@@ -1,16 +1,18 @@
 import React from "react";
-import { CatalogueMain } from "./components/mainPage/catalogueMain";
-import { MoviePage } from "./components/moviePage/moviePage";
-import { Results } from "./components/searchResults/results/results";
-import { ResultsExpanded } from "./components/searchResults/resultsExpanded/resultsExpanded";
-import { ShowPage } from "./components/showPage/showPage";
-import { TypeExpanded } from "./components/typeExpanded/typeExpanded";
-import { SeasonsPage } from "./components/seasonsPage/seasonsPage";
-import EpisodesPage from "./components/episodesPage/episodesPage";
-import CastPageShow from "./components/castPage/castPageShow";
-import CastPageMovie from "./components/castPage/castPageMovie";
-import { PersonPage } from "./components/personPage/personPage";
-import { AboutPage } from "./components/aboutPage/aboutPage";
+import {
+  CatalogueMain,
+  MoviePage,
+  Results,
+  ResultsExpanded,
+  ShowPage,
+  TypeExpanded,
+  SeasonsPage,
+  EpisodesPage,
+  CastPageShow,
+  CastPageMovie,
+  PersonPage,
+  AboutPage,
+} from "./components/";
 
 export const routes = [
   {
@@ -30,7 +32,7 @@ export const routes = [
     component: MoviePage,
   },
   {
-    path: "/movflix/persons/page/:id/:name",
+    path: "/movflix/person/page/:id/:name",
     component: PersonPage,
   },
   {

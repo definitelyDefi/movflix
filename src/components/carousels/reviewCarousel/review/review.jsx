@@ -22,14 +22,14 @@ const ReadMore = ({ children }) => {
         <Modal.Body>{text}</Modal.Body>
       </Modal>
 
-      <p className={classes.text}>
+      <span className={classes.text}>
         {isReadMore ? text.slice(0, 400) : handleShow}
         {text.length > 400 ? (
           <span onClick={handleShow} className={classes.button}>
             {"...read more"}
           </span>
         ) : null}
-      </p>
+      </span>
     </>
   );
 };

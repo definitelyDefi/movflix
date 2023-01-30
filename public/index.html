@@ -28,14 +28,15 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+
     <title>Movflix</title>
     <script type="text/javascript">
-      (function (l) {
+      (function(l) {
         if (l.search[1] === "/") {
           var decoded = l.search
             .slice(1)
             .split("&")
-            .map(function (s) {
+            .map(function(s) {
               return s.replace(/~and~/g, "&");
             })
             .join("?");

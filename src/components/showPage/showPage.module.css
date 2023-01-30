@@ -7,6 +7,9 @@
 .wrapper {
   background-color: #f2f2f2;
 }
+.infoWrapper {
+  margin-left: 60px;
+}
 .backgroundImage {
   position: absolute;
   z-index: 1;
@@ -26,7 +29,7 @@
   justify-content: space-between;
 }
 .castHeader {
-  margin-left: 70px;
+  /* margin-left: 70px; */
   margin-bottom: 30px;
   font-weight: 500;
   font-size: 30px;

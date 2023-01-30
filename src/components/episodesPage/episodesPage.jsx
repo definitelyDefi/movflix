@@ -1,24 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { getSearchEpisodes } from "./../../http";
-import { useEffect } from "react";
-import Preloader from "./../decorative/preloader/preloader";
-import { SmallHeader } from "../smallHeader/smallHeader";
-import { Episodes } from "../episodes/episodes";
+import { Episodes, SmallHeader, Preloader } from "../";
 
-const EpisodesPage = () => {
+export const EpisodesPage = () => {
   let { id, season } = useParams();
 
   let dispatch = useDispatch();
-  let currentSeason = useSelector(
-    (state) => state.movies.currentShow.currentSeason
-  );
-  const api_key = process.env.REACT_APP_MOVIES_API_KEY;
-  let isFetching = useSelector((state) => state.movies.isFetching);
+  let currentSeason = useSelector((state) => state.shows.currentShow.currentSeason);
+  let isFetching = useSelector((state) => state.global.isFetching);
   useEffect(() => {
-    dispatch(getSearchEpisodes(api_key, id, season));
-  }, [api_key, dispatch, id, season]);
+    dispatch(getSearchEpisodes(id, season));
+  }, [dispatch, id, season]);
 
   return (
     <div>
@@ -40,5 +34,3 @@ const EpisodesPage = () => {
     </div>
   );
 };
-
-export default EpisodesPage;

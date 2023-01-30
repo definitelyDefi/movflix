@@ -24,6 +24,7 @@ export const ReviewCarousel = (props) => {
         {items.map((item) => {
           return (
             <Review
+              key={item.author}
               avatar_path={item.author_details.avatar_path}
               author={item.author}
               content={item.content}

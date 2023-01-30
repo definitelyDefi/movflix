@@ -1,31 +1,21 @@
 import React from "react";
-import classes from "./fullscreenCarousel.module.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
+import classes from "./fsCarousel.module.css";
+import { Link } from "react-router-dom";
 
-import Slider from "react-slick";
-import { useNavigate } from "react-router";
-
-var settings = {
-  autoplay: false,
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  className: classes.carousel,
-  swipe: true,
-  fade: false,
-};
-
-export function FullscreenCarousel(props) {
-  const { items } = props;
-  let navigate = useNavigate();
+export function FsCarousel({ items }) {
   return (
-    <div className={classes.carousel}>
-      <Slider {...settings}>
+    <div className={classes.wrapper}>
+      <Swiper
+        navigation={true}
+        modules={[Navigation]}
+        className="mySwiper"
+        style={{ height: "80vh" }}
+      >
         {items.map((item) => {
           return (
-            <div className={classes.sliderElement} key={item.id}>
+            <SwiperSlide key={item.id}>
               <img
                 className={classes.backgroundImage}
                 src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`}
@@ -45,12 +35,10 @@ export function FullscreenCarousel(props) {
                 </div>
                 <p className={classes.description}>{item.overview}</p>
                 <div className={classes.actionButtons}>
-                  <button
+                  <Link
                     className={classes.button}
                     value={item.id}
-                    onClick={() => {
-                      navigate(`/movflix/movies/page/${item.id}/${item.title}`);
-                    }}
+                    to={`/movflix/movies/page/${item.id}/${item.title}`}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +51,7 @@ export function FullscreenCarousel(props) {
                       <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
                     </svg>
                     View more
-                  </button>
+                  </Link>
                   <button className={classes.button} value={item.id}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -79,10 +67,10 @@ export function FullscreenCarousel(props) {
                   </button>
                 </div>
               </div>
-            </div>
+            </SwiperSlide>
           );
         })}
-      </Slider>
+      </Swiper>
     </div>
   );
 }

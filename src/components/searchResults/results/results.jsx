@@ -1,28 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "./results.module.css";
 import { useNavigate, useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { getSearchResults } from "./../../../http";
-import { useEffect } from "react";
 import poster_placeholder from "./../../../assets/no_poster.png";
-import { get_persons_popularity } from "./../../../helpers/prettifyPopularity";
-import Preloader from "./../../decorative/preloader/preloader";
-import { Header } from "../../header/header";
+import { Header, Preloader } from "../../";
 
 export const Results = () => {
   let query = useParams()["*"];
-  const api_key = process.env.REACT_APP_MOVIES_API_KEY;
   let navigate = useNavigate();
   const dispatch = useDispatch();
-  const isFetching = useSelector((state) => state.movies.isFetching);
+  const isFetching = useSelector((state) => state.global.isFetching);
 
   useEffect(() => {
-    dispatch(getSearchResults(api_key, query));
-  }, [api_key, dispatch, query]);
+    dispatch(getSearchResults(query));
+  }, [dispatch, query]);
 
-  const movies = useSelector((state) => state.movies.searchResults.movies);
-  const shows = useSelector((state) => state.movies.searchResults.shows);
-  const persons = useSelector((state) => state.movies.searchResults.persons);
+  const movies = useSelector((state) => state.search.searchResults.movies);
+  const shows = useSelector((state) => state.search.searchResults.shows);
+  const persons = useSelector((state) => state.search.searchResults.persons);
 
   return (
     <>
@@ -37,11 +33,7 @@ export const Results = () => {
               {movies.slice(0, 6).map((movie) => (
                 <div className={classes.item}>
                   <img
-                    onClick={() =>
-                      navigate(
-                        `/movflix/movies/page/${movie.id}/${movie.title}`
-                      )
-                    }
+                    onClick={() => navigate(`/movflix/movies/page/${movie.id}/${movie.title}`)}
                     className={classes.itemImage}
                     alt={" "}
                     src={
@@ -53,28 +45,17 @@ export const Results = () => {
                   <h3 className={classes.itemTitle}>{movie.title}</h3>
                   <div className={classes.itemInfo}>
                     <h3 className={classes.itemPopularity}>
-                      {movie.vote_average !== 0
-                        ? `${movie.vote_average}/10`
-                        : "No rating"}
+                      {movie.vote_average !== 0 ? `${movie.vote_average}/10` : "No rating"}
                     </h3>
                     <h3 className={classes.itemYear}>
-                      {movie.release_date
-                        ? movie.release_date.slice(0, 4)
-                        : "No year"}
+                      {movie.release_date ? movie.release_date.slice(0, 4) : "No year"}
                     </h3>
-                    <h3 className={classes.itemNsfw}>
-                      {movie.adult ? "18+" : "16+"}
-                    </h3>
+                    <h3 className={classes.itemNsfw}>{movie.adult ? "18+" : "16+"}</h3>
                   </div>
                 </div>
               ))}
               {movies.length > 6 ? (
-                <button
-                  className={classes.viewMore}
-                  onClick={() =>
-                    navigate(`/movflix/search/expand/${query}/movies`)
-                  }
-                >
+                <button className={classes.viewMore} onClick={() => navigate(`/movflix/search/expand/${query}/movies`)}>
                   View more
                 </button>
               ) : null}
@@ -109,28 +90,17 @@ export const Results = () => {
                   <h3 className={classes.itemTitle}>{show.name}</h3>
                   <div className={classes.itemInfo}>
                     <h3 className={classes.itemPopularity}>
-                      {show.vote_average !== 0
-                        ? `${show.vote_average}/10`
-                        : "No rating"}
+                      {show.vote_average !== 0 ? `${show.vote_average}/10` : "No rating"}
                     </h3>
                     <h3 className={classes.itemYear}>
-                      {show.first_air_date === undefined
-                        ? "No year"
-                        : show.first_air_date.slice(0, 4)}
+                      {show.first_air_date === undefined ? "No year" : show.first_air_date.slice(0, 4)}
                     </h3>
-                    <h3 className={classes.itemNsfw}>
-                      {show.adult ? "18+" : "16+"}
-                    </h3>
+                    <h3 className={classes.itemNsfw}>{show.adult ? "18+" : "16+"}</h3>
                   </div>
                 </div>
               ))}
               {shows.length > 6 ? (
-                <button
-                  className={classes.viewMore}
-                  onClick={() =>
-                    navigate(`/movflix/search/expand/${query}/shows`)
-                  }
-                >
+                <button className={classes.viewMore} onClick={() => navigate(`/movflix/search/expand/${query}/shows`)}>
                   View more
                 </button>
               ) : null}
@@ -164,9 +134,7 @@ export const Results = () => {
                           : poster_placeholder
                       }
                       onClick={() => {
-                        navigate(
-                          `/movflix/persons/page/${person.id}/${person.name}`
-                        );
+                        navigate(`/movflix/persons/page/${person.id}/${person.name}`);
                       }}
                       alt={" "}
                     />
@@ -174,9 +142,7 @@ export const Results = () => {
                     <div className={classes.itemInfo}>
                       <h3 className={classes.itemPopularity}>
                         {person.known_for.map((item) => (
-                          <h3 className={classes.itemJobs}>
-                            {item.title || item.name}
-                          </h3>
+                          <h3 className={classes.itemJobs}>{item.title || item.name}</h3>
                         ))}
                       </h3>
                     </div>
@@ -185,9 +151,7 @@ export const Results = () => {
               {persons.length > 6 ? (
                 <button
                   className={classes.viewMore}
-                  onClick={() =>
-                    navigate(`/movflix/search/expand/${query}/persons`)
-                  }
+                  onClick={() => navigate(`/movflix/search/expand/${query}/persons`)}
                 >
                   View more
                 </button>

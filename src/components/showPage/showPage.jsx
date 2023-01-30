@@ -1,35 +1,33 @@
-import { LastSeason } from "../lastSeason/lastSeason";
-import { Description } from "./../description/description";
 import React, { useEffect } from "react";
-import { useNavigate, useParams } from "react-router";
+import { useParams } from "react-router";
 import classes from "./showPage.module.css";
 import background from "./../../assets/background.jpg";
-import { DetailsBlock } from "../detailsBlock/detailsBlock";
+import poster_placeholder from "./../../assets/no_poster.png";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentShow } from "../../http";
-import Preloader from "../decorative/preloader/preloader";
-import { SmallCarousel, CastCarousel, ReviewCarousel } from "../carousels";
-
-import { Header } from "../header/header";
-import poster_placeholder from "./../../assets/no_poster.png";
+import {
+  Header,
+  SmCarousel,
+  ReviewCarousel,
+  Preloader,
+  DetailsBlock,
+  LastSeason,
+  Description,
+  CastCarousel,
+} from "../";
 
 export const ShowPage = () => {
   let dispatch = useDispatch();
   let params = useParams();
-  let navigate = useNavigate();
   let show_id = params.id;
-
-  const currentShow = useSelector((state) => state.movies.currentShow);
-  let seasons = useSelector((state) => state.movies.currentShow.seasons);
+  const currentShow = useSelector((state) => state.shows.currentShow);
+  let seasons = useSelector((state) => state.shows.currentShow.seasons);
   let lastSeason = seasons.slice(-1)[0];
-
-  const api_key = process.env.REACT_APP_MOVIES_API_KEY;
-
-  let isFetching = useSelector((state) => state.movies.isFetching);
+  let isFetching = useSelector((state) => state.global.isFetching);
 
   useEffect(() => {
-    dispatch(getCurrentShow(api_key, show_id));
-  }, [api_key, dispatch, show_id]);
+    dispatch(getCurrentShow(show_id));
+  }, [dispatch, show_id]);
 
   return (
     <>
@@ -40,11 +38,7 @@ export const ShowPage = () => {
         ) : (
           <div>
             <div className={classes.container}>
-              <img
-                className={classes.backgroundImage}
-                src={background}
-                alt={background}
-              />
+              <img className={classes.backgroundImage} src={background} alt={background} />
               <div className={classes.content}>
                 <img
                   className={classes.posterImage}
@@ -58,36 +52,28 @@ export const ShowPage = () => {
                 <Description data={currentShow} type={"tv show"} />
               </div>
             </div>
-            {currentShow.reviews.length === 0 ? null : (
-              <ReviewCarousel items={currentShow.reviews} />
-            )}
+            <div className={classes.infoWrapper}>
+              {currentShow.reviews.length === 0 ? null : <ReviewCarousel items={currentShow.reviews} />}
 
-            <div className={classes.details}>
-              <div>
-                <LastSeason season={lastSeason} title={currentShow.name} />
-                <div className={classes.castBlock}>
-                  <h3 className={classes.castHeader}>The cast of the series</h3>
-                  <CastCarousel items={currentShow.credits.cast.slice(0, 11)} />
+              <div className={classes.details}>
+                <div>
+                  <LastSeason season={lastSeason} title={currentShow.name} />
+                  <div className={classes.castBlock}>
+                    <h3 className={classes.castHeader}>The cast of the series</h3>
+                    <CastCarousel items={currentShow.credits.cast.slice(0, 11)} />
+                  </div>
                 </div>
-              </div>
 
-              <DetailsBlock
-                content={currentShow}
-                variant="show"
-                content_type="show"
+                <DetailsBlock content={currentShow} variant="show" content_type="show" />
+              </div>
+              <SmCarousel
+                header={"Similar shows"}
+                isLight={true}
+                items={currentShow.similar}
+                moreButton={`/movflix/categories/shows/similar/${currentShow.id}`}
+                marginTop={"30px"}
               />
             </div>
-
-            <SmallCarousel
-              items={currentShow.similar}
-              title="Similar shows"
-              variant="light"
-              type="show"
-              autoplay={false}
-              onClick={() =>
-                navigate(`/movflix/categories/shows/similar/${currentShow.id}`)
-              }
-            />
           </div>
         )}
       </div>

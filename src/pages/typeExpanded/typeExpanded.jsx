@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import classes from "./typeExpanded.module.css";
 import { getByCategory } from "./../../http";
 import { useDispatch } from "react-redux";
-import { Header, Preloader, PagesSwitcher, TypeItems } from "../";
+import { Header, Preloader, PagesSwitcher, TypeItems } from "../../components";
 
 export const TypeExpanded = () => {
   let [currentPage, setCurrentPage] = useState(1);

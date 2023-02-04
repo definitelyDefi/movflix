@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { getSearchResults } from "./../../../http";
 import poster_placeholder from "./../../../assets/no_poster.png";
-import { Header, Preloader } from "../../";
+import { Header, Preloader } from "../../../components";
 
 export const Results = () => {
   let query = useParams()["*"];

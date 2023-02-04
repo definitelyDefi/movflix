@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import classes from "./catalogueMain.module.css";
 import { getMainPageMovies } from "../../http";
 import { useDispatch, useSelector } from "react-redux/es/exports";
-import { Header, Preloader, FsCarousel, MdCarousel, SmCarousel, SearchBar } from "../";
+import { Header, Preloader, FsCarousel, MdCarousel, SmCarousel, SearchBar } from "../../components";
+import { ScrollButton } from "../../components/decorative/buttons/buttons";
 
 export const CatalogueMain = () => {
   const dispatch = useDispatch();
@@ -61,6 +62,7 @@ export const CatalogueMain = () => {
           </>
         )}
       </div>
+      <ScrollButton />
     </div>
   );
 };

@@ -12,7 +12,7 @@ import {
   CastPageMovie,
   PersonPage,
   AboutPage,
-} from "./components/";
+} from "./pages";
 
 export const routes = [
   {

@@ -1,5 +1,4 @@
-import { SmallHeader } from "./../smallHeader/smallHeader";
-import { Seasons } from "./../seasons/seasons";
+import { Seasons, SmallHeader } from "../../components";
 import React from "react";
 import { useSelector } from "react-redux";
 

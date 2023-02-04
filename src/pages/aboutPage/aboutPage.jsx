@@ -1,5 +1,5 @@
 import React from "react";
-import { Header } from "../header/header";
+import { Header } from "../../components";
 import classes from "./aboutPage.module.css";
 import logo from "./../../assets/logo100.png";
 import avatar from "./../../assets/avatar_author.png";
@@ -16,10 +16,7 @@ export const AboutPage = () => {
             <div className={classes.info}>
               <h1 className={classes.name}>Movflix React</h1>
 
-              <a
-                className={classes.button}
-                href={"https://github.com/definitelyDefi/movflix"}
-              >
+              <a className={classes.button} href={"https://github.com/definitelyDefi/movflix"}>
                 <svg
                   aria-hidden="true"
                   class="svg-inline--fa fa-github fa-w-16 "
@@ -39,8 +36,8 @@ export const AboutPage = () => {
             </div>
           </div>
           <p className={classes.description}>
-            A simple but powerful catalogue for browsing movies, tv shows and
-            actors. Information is taken by OMDB and TMDB apis.
+            A simple but powerful catalogue for browsing movies, tv shows and actors. Information is taken by OMDB and
+            TMDB apis.
           </p>
         </div>
 
@@ -50,14 +47,10 @@ export const AboutPage = () => {
             <img src={avatar} className={classes.avatar} alt="" />
             <div className={classes.info}>
               <h1 className={classes.name}>
-                Denis Beliy{" "}
-                <span className={classes.grayText}>(definitelydefi)</span>
+                Denis Beliy <span className={classes.grayText}>(definitelydefi)</span>
               </h1>
 
-              <a
-                className={classes.button}
-                href={"https://github.com/definitelyDefi"}
-              >
+              <a className={classes.button} href={"https://github.com/definitelyDefi"}>
                 <svg
                   aria-hidden="true"
                   class="svg-inline--fa fa-github fa-w-16 "
@@ -77,9 +70,8 @@ export const AboutPage = () => {
             </div>
           </div>
           <p className={classes.description}>
-            Hi, my name is Denis Beliy. i am creator of this project, and a
-            novice react developer. Feel free to text me at any time if you have
-            any questions
+            Hi, my name is Denis Beliy. i am creator of this project, and a novice react developer. Feel free to text me
+            at any time if you have any questions
           </p>
         </div>
       </div>

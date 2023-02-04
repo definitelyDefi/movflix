@@ -3,7 +3,7 @@ import classes from "./castPage.module.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import person_placeholder from "./../../assets/person_placeholder.jpg";
-import { SmallHeader, Preloader } from "../";
+import { SmallHeader, Preloader } from "../../components";
 
 export const CastPageMovie = () => {
   let navigate = useNavigate();

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router";
+import { useLocation, useParams } from "react-router";
 import classes from "./showPage.module.css";
 import background from "./../../assets/background.jpg";
 import poster_placeholder from "./../../assets/no_poster.png";
@@ -13,13 +13,14 @@ import {
   DetailsBlock,
   LastSeason,
   Description,
-  CastCarousel,
-} from "../";
+  CsCarousel,
+} from "../../components";
 
 export const ShowPage = () => {
   let dispatch = useDispatch();
   let params = useParams();
   let show_id = params.id;
+  let location = useLocation();
   const currentShow = useSelector((state) => state.shows.currentShow);
   let seasons = useSelector((state) => state.shows.currentShow.seasons);
   let lastSeason = seasons.slice(-1)[0];
@@ -60,7 +61,10 @@ export const ShowPage = () => {
                   <LastSeason season={lastSeason} title={currentShow.name} />
                   <div className={classes.castBlock}>
                     <h3 className={classes.castHeader}>The cast of the series</h3>
-                    <CastCarousel items={currentShow.credits.cast.slice(0, 11)} />
+                    <CsCarousel
+                      items={currentShow.credits.cast.slice(0, 11)}
+                      moreButton={`${location.pathname}/cast_crew`}
+                    />
                   </div>
                 </div>
 

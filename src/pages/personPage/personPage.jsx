@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getPerson } from "../../http";
 import { get_cast } from "../../helpers/sortPersonRoles";
-import { Preloader, PersonDetails, Header } from "../";
+import { Preloader, PersonDetails, Header } from "../../components";
 
 import poster_placeholder from "./../../assets/person_placeholder.jpg";
 

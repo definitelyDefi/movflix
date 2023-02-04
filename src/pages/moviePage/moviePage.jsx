@@ -1,15 +1,25 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router";
+import { useLocation, useParams } from "react-router";
 import classes from "./moviePage.module.css";
 import background from "./../../assets/background.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentMovie } from "../../http";
 import poster_placeholder from "./../../assets/no_poster.png";
-import { SmCarousel, Description, Header, ReviewCarousel, CastCarousel, Preloader, DetailsBlock } from "../";
+import {
+  SmCarousel,
+  Description,
+  Header,
+  ReviewCarousel,
+  CastCarousel,
+  Preloader,
+  DetailsBlock,
+} from "../../components";
+import { CsCarousel } from "../../components/carousels/csCarousel/csCarousel";
 
 export const MoviePage = () => {
   let params = useParams()["*"].split("/");
   let search_title = params[1];
+  let location = useLocation();
   let movie_id = params[0];
   const currentMovie = useSelector((state) => state.movies.currentMovie);
   const dispatch = useDispatch();
@@ -50,7 +60,11 @@ export const MoviePage = () => {
 
               <div className={classes.castBlock}>
                 <h3 className={classes.castHeader}>The cast of the movie</h3>
-                <CastCarousel items={currentMovie.credits.cast.slice(0, 11)} />
+                {/* <CastCarousel items={currentMovie.credits.cast.slice(0, 11)} /> */}
+                <CsCarousel
+                  items={currentMovie.credits.cast.slice(0, 11)}
+                  moreButton={`${location.pathname}/cast_crew`}
+                />
               </div>
               {currentMovie.similar.length === 0 ? null : (
                 <SmCarousel

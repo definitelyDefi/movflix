@@ -4,7 +4,7 @@ import classes from "./castPage.module.css";
 import { getShowSearchCrew } from "../../http";
 import { useDispatch, useSelector } from "react-redux";
 import person_placeholder from "./../../assets/person_placeholder.jpg";
-import { SmallHeader, Preloader } from "../";
+import { SmallHeader, Preloader } from "../../components";
 
 export const CastPageShow = () => {
   let dispatch = useDispatch();

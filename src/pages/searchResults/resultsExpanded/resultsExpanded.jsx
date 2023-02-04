@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router";
 import classes from "./resultsExpanded.module.css";
 import { getSearchMovies, getSearchPersons, getSearchTv } from "./../../../http";
-import { TypeItems, Header, Preloader, PagesSwitcher } from "../../";
+import { TypeItems, Header, Preloader, PagesSwitcher } from "../../../components/";
 
 export const ResultsExpanded = () => {
   let [currentPage, setCurrentPage] = useState(1);

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { getSearchEpisodes } from "./../../http";
-import { Episodes, SmallHeader, Preloader } from "../";
+import { Episodes, SmallHeader, Preloader } from "../../components";
 
 export const EpisodesPage = () => {
   let { id, season } = useParams();

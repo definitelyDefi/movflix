@@ -5,10 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 export const MdCarousel = ({ items, moreButton, header, marginTop }) => {
   return (
     <>
-      <h1
-        className={classes.header}
-        style={marginTop ? { marginTop: `${marginTop}` } : null}
-      >
+      <h1 className={classes.header} style={marginTop ? { marginTop: `${marginTop}` } : null}>
         {header}
       </h1>
       <Swiper
@@ -16,6 +13,27 @@ export const MdCarousel = ({ items, moreButton, header, marginTop }) => {
         spaceBetween={30}
         centeredSlides={false}
         className="mySwiper"
+        breakpoints={{
+          640: {
+            width: 640,
+            slidesPerView: 2,
+          },
+
+          768: {
+            width: 768,
+            slidesPerView: 3,
+          },
+
+          1024: {
+            width: 1024,
+            slidesPerView: 4,
+          },
+
+          1366: {
+            width: 1366,
+            slidesPerView: 4,
+          },
+        }}
       >
         {items.map((item, i) => {
           return (
@@ -46,9 +64,7 @@ export const MdCarousel = ({ items, moreButton, header, marginTop }) => {
                 </Link>
 
                 <div className={classes.info}>
-                  {item.vote_average ? (
-                    <p>{`${Math.round(item.vote_average * 10) / 10}/10`}</p>
-                  ) : null}
+                  {item.vote_average ? <p>{`${Math.round(item.vote_average * 10) / 10}/10`}</p> : null}
 
                   <p>
                     {item.release_date

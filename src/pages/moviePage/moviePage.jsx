@@ -5,15 +5,7 @@ import background from "./../../assets/background.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentMovie } from "../../http";
 import poster_placeholder from "./../../assets/no_poster.png";
-import {
-  SmCarousel,
-  Description,
-  Header,
-  ReviewCarousel,
-  CastCarousel,
-  Preloader,
-  DetailsBlock,
-} from "../../components";
+import { SmCarousel, Description, Header, ReviewCarousel, Preloader, DetailsBlock } from "../../components";
 import { CsCarousel } from "../../components/carousels/csCarousel/csCarousel";
 
 export const MoviePage = () => {

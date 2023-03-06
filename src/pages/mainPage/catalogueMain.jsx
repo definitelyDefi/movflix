@@ -48,7 +48,7 @@ export const CatalogueMain = () => {
               <MdCarousel
                 header={"Popular shows"}
                 items={popularShows}
-                moreButton={`/movflix/categories/shows/popular`}
+                moreButton={`/movflix/categories/tv/popular`}
                 marginTop={"30px"}
               />
 

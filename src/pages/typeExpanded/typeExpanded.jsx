@@ -35,8 +35,14 @@ export const TypeExpanded = () => {
           </span>
         </h1>
 
-        {isFetching ? <Preloader variant="white" /> : <TypeItems items={items} content_type={content_type} />}
-        <PagesSwitcher currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages} />
+        {isFetching ? (
+          <Preloader variant="white" />
+        ) : (
+          <>
+            <TypeItems items={items} content_type={content_type} />
+            <PagesSwitcher currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages} />
+          </>
+        )}
       </div>
     </div>
   );

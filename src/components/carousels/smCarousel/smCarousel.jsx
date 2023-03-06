@@ -3,27 +3,14 @@ import classes from "./smCarousel.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 
-export const SmCarousel = ({
-  items,
-  moreButton,
-  header,
-  isLight,
-  marginTop,
-}) => {
-  let headerClass = isLight
-    ? `${classes.header} ${classes.light}`
-    : classes.header;
+export const SmCarousel = ({ items, moreButton, header, isLight, marginTop }) => {
+  let headerClass = isLight ? `${classes.header} ${classes.light}` : classes.header;
 
-  let titleClass = isLight
-    ? `${classes.title} ${classes.light}`
-    : classes.title;
+  let titleClass = isLight ? `${classes.title} ${classes.light}` : classes.title;
 
   return (
     <>
-      <h1
-        className={headerClass}
-        style={marginTop ? { marginTop: `${marginTop}` } : null}
-      >
+      <h1 className={headerClass} style={marginTop ? { marginTop: `${marginTop}` } : null}>
         {header}
       </h1>
       <Swiper
@@ -31,6 +18,27 @@ export const SmCarousel = ({
         spaceBetween={30}
         centeredSlides={false}
         className="mySwiper"
+        breakpoints={{
+          640: {
+            width: 640,
+            slidesPerView: 3,
+          },
+
+          768: {
+            width: 768,
+            slidesPerView: 4,
+          },
+
+          1024: {
+            width: 1024,
+            slidesPerView: 5,
+          },
+
+          1366: {
+            width: 1366,
+            slidesPerView: 5,
+          },
+        }}
       >
         {items.map((item, i) => {
           return (
@@ -63,10 +71,7 @@ export const SmCarousel = ({
                 </Link>
 
                 <div className={classes.info}>
-                  {item.vote_average ? (
-                    <p key={i}>{`${Math.round(item.vote_average * 10) /
-                      10}/10`}</p>
-                  ) : null}
+                  {item.vote_average ? <p key={i}>{`${Math.round(item.vote_average * 10) / 10}/10`}</p> : null}
 
                   <p>
                     {item.release_date

@@ -2,26 +2,23 @@ import React from "react";
 import classes from "./typeItem.module.css";
 import poster_placeholder from "./../../assets/no_poster.png";
 import { useNavigate } from "react-router-dom";
-import LazyLoad from "react-lazyload";
 
 export function TypeItem({ content_type, item, onLoad }) {
   let navigate = useNavigate();
   return (
     <div className={classes.item}>
-      <LazyLoad once>
-        <img
-          onClick={() => navigate(`/movflix/${content_type}/page/${item.id}/${item.title || item.name}`)}
-          className={classes.itemImage}
-          alt={""}
-          src={
-            item.poster_path !== null && content_type !== "person"
-              ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
-              : item.profile_path
-              ? `https://image.tmdb.org/t/p/w500${item.profile_path}`
-              : poster_placeholder
-          }
-        />
-      </LazyLoad>
+      <img
+        onClick={() => navigate(`/movflix/${content_type}/page/${item.id}/${item.title || item.name}`)}
+        className={classes.itemImage}
+        alt={""}
+        src={
+          item.poster_path !== null && content_type !== "person"
+            ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
+            : item.profile_path
+            ? `https://image.tmdb.org/t/p/w500${item.profile_path}`
+            : poster_placeholder
+        }
+      />
 
       <h3 className={classes.itemTitle}>{item.title || item.name}</h3>
 

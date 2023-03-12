@@ -36,6 +36,6 @@ let store = configureStore({
     }),
 });
 export let persistor = persistStore(store);
-// persistor.purge();
+persistor.purge();
 console.log(store.getState());
 export default store;

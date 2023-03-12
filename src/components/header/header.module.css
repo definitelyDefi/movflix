@@ -10,6 +10,9 @@
   width: 64px;
   height: 64px;
 }
+.logoBlock {
+  text-decoration: none;
+}
 .items {
   position: relative;
   display: flex;
@@ -27,9 +30,11 @@
   font-size: 20px;
   font-family: "Poppins", serif;
 }
-.link:hover,
-.linkDropdown:hover {
+.link:hover {
   opacity: 0.6;
+}
+.linkDropdown:hover {
+  color: black;
 }
 .linkDropdown {
   color: black;
@@ -40,6 +45,8 @@
   outline: none;
   width: fit-content;
   height: fit-content;
+  text-decoration: none;
+  padding: 0 4px;
 }
 .logoBlock {
   display: flex;

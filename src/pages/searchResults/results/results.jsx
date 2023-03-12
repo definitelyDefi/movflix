@@ -33,7 +33,7 @@ export const Results = () => {
               {movies.slice(0, 6).map((movie) => (
                 <div className={classes.item}>
                   <img
-                    onClick={() => navigate(`/movflix/movies/page/${movie.id}/${movie.title}`)}
+                    onClick={() => navigate(`/movflix/movie/page/${movie.id}/${movie.title}`)}
                     className={classes.itemImage}
                     alt={" "}
                     src={
@@ -79,7 +79,7 @@ export const Results = () => {
                     className={classes.itemImage}
                     alt={" "}
                     onClick={() => {
-                      navigate(`/movflix/shows/page/${show.id}/${show.name}`);
+                      navigate(`/movflix/tv/page/${show.id}/${show.name}`);
                     }}
                     src={
                       show.poster_path != null

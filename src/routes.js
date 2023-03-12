@@ -28,7 +28,7 @@ export const routes = [
     component: CatalogueMain,
   },
   {
-    path: "/movflix/movies/page/*",
+    path: "/movflix/movie/page/*",
     component: MoviePage,
   },
   {
@@ -36,23 +36,23 @@ export const routes = [
     component: PersonPage,
   },
   {
-    path: "/movflix/shows/page/:id/:title",
+    path: "/movflix/tv/page/:id/:title",
     component: ShowPage,
   },
   {
-    path: "/movflix/movies/page/:id/:title/cast_crew",
+    path: "/movflix/movie/page/:id/:title/cast_crew",
     component: CastPageMovie,
   },
   {
-    path: "/movflix/shows/page/:id/:title/cast_crew",
+    path: "/movflix/tv/page/:id/:title/cast_crew",
     component: CastPageShow,
   },
   {
-    path: "/movflix/shows/page/:id/:title/seasons",
+    path: "/movflix/tv/page/:id/:title/seasons",
     component: SeasonsPage,
   },
   {
-    path: "/movflix/shows/page/:id/:title/seasons/:season",
+    path: "/movflix/tv/page/:id/:title/seasons/:season",
     component: EpisodesPage,
   },
   {

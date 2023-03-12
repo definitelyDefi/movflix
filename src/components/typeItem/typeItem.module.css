@@ -16,7 +16,12 @@
   width: 250px;
   flex-wrap: wrap;
 }
-
+.link {
+  text-decoration: none;
+}
+.link:hover {
+  opacity: 0.6;
+}
 .itemInfo > * {
   color: #a3a3a3;
   font-size: 15px;

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/movflix/precache-manifest.e8c94544ba0869c91a74fa04590c19d4.js"
+  "/movflix/precache-manifest.24ad8005b74086e7f3a24323c4d05381.js"
 );
 
 workbox.clientsClaim();

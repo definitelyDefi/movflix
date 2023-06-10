@@ -14,6 +14,7 @@ import {
   LastSeason,
   Description,
   CsCarousel,
+  Trailer,
 } from "../../components";
 
 export const ShowPage = () => {
@@ -22,6 +23,7 @@ export const ShowPage = () => {
   let show_id = params.id;
   let location = useLocation();
   const currentShow = useSelector((state) => state.shows.currentShow);
+
   let seasons = useSelector((state) => state.shows.currentShow.seasons);
   let lastSeason = seasons.slice(-1)[0];
   let isFetching = useSelector((state) => state.global.isFetching);
@@ -59,6 +61,8 @@ export const ShowPage = () => {
               <div className={classes.details}>
                 <div>
                   <LastSeason season={lastSeason} title={currentShow.name} />
+                  {currentShow.video_url ? <Trailer id={currentShow.video_url.key} /> : null}
+
                   <div className={classes.castBlock}>
                     <h3 className={classes.castHeader}>The cast of the series</h3>
                     <CsCarousel

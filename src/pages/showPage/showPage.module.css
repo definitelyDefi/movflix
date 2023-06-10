@@ -46,6 +46,9 @@
   height: 450px;
   border-radius: 10px;
 }
+.trailerBlock {
+  margin-top: 30px;
+}
 @media (max-width: 480px) and (min-width: 320px) {
 }
 

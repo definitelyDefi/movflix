@@ -11,6 +11,7 @@ const defaultStore = {
       cast: [{ known_for_department: "", name: "", profile_path: "", character: "" }],
       crew: [{ name: "", department: "", profile_path: "", job: "" }],
     },
+    video_url: [{ key: "" }],
     poster_path: "",
     title: "",
     rated: null,
@@ -122,6 +123,7 @@ export let moviesReducer = (state = defaultStore, action) => {
           external_ids: action.socials,
           similar: action.similar,
           credits: action.credits,
+          video_url: action.video_url,
         },
       };
 

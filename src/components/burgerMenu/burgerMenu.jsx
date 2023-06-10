@@ -31,15 +31,9 @@ export const BurgerMenu = ({ status }) => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu variant="dark">
-                <Dropdown.Item href="/movflix/categories/movies/popular">
-                  Popular movies
-                </Dropdown.Item>
-                <Dropdown.Item href="/movflix/categories/movies/top rated">
-                  Best movies
-                </Dropdown.Item>
-                <Dropdown.Item href="/movflix/categories/movies/upcoming">
-                  Upcoming movies
-                </Dropdown.Item>
+                <Dropdown.Item href="/movflix/categories/movie/popular">Popular movies</Dropdown.Item>
+                <Dropdown.Item href="/movflix/categories/movie/top rated">Best movies</Dropdown.Item>
+                <Dropdown.Item href="/movflix/categories/movie/upcoming">Upcoming movies</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -54,15 +48,9 @@ export const BurgerMenu = ({ status }) => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu variant="dark">
-                <Dropdown.Item href="/movflix/categories/shows/popular">
-                  Popular shows
-                </Dropdown.Item>
-                <Dropdown.Item href="/movflix/categories/shows/top rated">
-                  Best shows
-                </Dropdown.Item>
-                <Dropdown.Item href="/movflix/categories/shows/upcoming">
-                  Upcoming shows
-                </Dropdown.Item>
+                <Dropdown.Item href="/movflix/categories/tv/popular">Popular shows</Dropdown.Item>
+                <Dropdown.Item href="/movflix/categories/tv/top rated">Best shows</Dropdown.Item>
+                <Dropdown.Item href="/movflix/categories/tv/upcoming">Upcoming shows</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -77,9 +65,7 @@ export const BurgerMenu = ({ status }) => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu variant="dark">
-                <Dropdown.Item href="/movflix/categories/persons/popular">
-                  Popular actors
-                </Dropdown.Item>
+                <Dropdown.Item href="/movflix/categories/persons/popular">Popular actors</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>

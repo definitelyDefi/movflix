@@ -110,13 +110,18 @@ export const getUpcomingMovies = (currentPage) => async (dispatch) => {
 export const getCurrentMovie = (movie_id, title) => async (dispatch) => {
   dispatch(setMoviesFetch(true));
   let id = movie_id;
+
   const response = await tmdb_api.get(`movie/${id}`, {
     params: {
       ...defaultParams,
 
-      append_to_response: "keywords,reviews,external_ids,similar,credits",
+      append_to_response: "keywords,reviews,external_ids,similar,credits,videos",
     },
   });
+  let video_url = response.data.videos.results.filter(
+    (video) => video.name === "Official Trailer" || video.name === "Trailer"
+  )[0];
+
   dispatch(
     setCurrentMovie({
       currentMovie: response.data,
@@ -125,6 +130,7 @@ export const getCurrentMovie = (movie_id, title) => async (dispatch) => {
       reviews: response.data.reviews.results,
       similar: response.data.similar.results,
       credits: response.data.credits,
+      video_url: video_url ? video_url : "",
     })
   );
   const resp = await omdb_api.get("/", {
@@ -223,9 +229,16 @@ export const getSearchPersons = (query, page) => async (dispatch) => {
 export const getCurrentShow = (show_id) => async (dispatch) => {
   dispatch(setMoviesFetch(true));
   const response = await tmdb_api.get(`tv/${show_id}`, {
-    params: { ...defaultParams, append_to_response: "keywords,external_ids,similar,reviews,content_ratings,credits" },
+    params: {
+      ...defaultParams,
+      append_to_response: "keywords,external_ids,similar,reviews,content_ratings,credits,videos",
+    },
   });
   let ratings = response.data.content_ratings.results.filter((rating) => rating.iso_3166_1 === "US");
+  let video_url = response.data.videos.results.filter(
+    (video) => video.name === "Official Trailer" || video.name === "Trailer"
+  )[0];
+
   dispatch(
     setCurrentShow({
       currentShow: response.data,
@@ -235,6 +248,7 @@ export const getCurrentShow = (show_id) => async (dispatch) => {
       similar: response.data.similar.results,
       ratings: ratings,
       credits: response.data.credits,
+      video_url: video_url ? video_url : "",
     })
   );
 

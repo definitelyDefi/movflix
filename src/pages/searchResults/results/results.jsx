@@ -55,7 +55,7 @@ export const Results = () => {
                 </div>
               ))}
               {movies.length > 6 ? (
-                <button className={classes.viewMore} onClick={() => navigate(`/movflix/search/expand/${query}/movies`)}>
+                <button className={classes.viewMore} onClick={() => navigate(`/movflix/search/expand/${query}/movie`)}>
                   View more
                 </button>
               ) : null}
@@ -100,7 +100,7 @@ export const Results = () => {
                 </div>
               ))}
               {shows.length > 6 ? (
-                <button className={classes.viewMore} onClick={() => navigate(`/movflix/search/expand/${query}/shows`)}>
+                <button className={classes.viewMore} onClick={() => navigate(`/movflix/search/expand/${query}/tv`)}>
                   View more
                 </button>
               ) : null}

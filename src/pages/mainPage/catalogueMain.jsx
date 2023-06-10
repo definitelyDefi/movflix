@@ -40,7 +40,7 @@ export const CatalogueMain = () => {
               <MdCarousel
                 header={"Trending movies"}
                 items={popularMovies}
-                moreButton={`/movflix/categories/movies/popular`}
+                moreButton={`/movflix/categories/movie/popular`}
                 marginTop={"30px"}
               />
               <SearchBar />
@@ -56,7 +56,7 @@ export const CatalogueMain = () => {
                 header={"Upcoming movies"}
                 isLight={false}
                 items={upcomingMovies}
-                moreButton={`/movflix/categories/movies/upcoming`}
+                moreButton={`/movflix/categories/movie/upcoming`}
               />
             </div>
           </>

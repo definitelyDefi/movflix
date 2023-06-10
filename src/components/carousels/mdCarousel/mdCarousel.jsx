@@ -42,8 +42,8 @@ export const MdCarousel = ({ items, moreButton, header, marginTop }) => {
                 <Link
                   to={
                     !item.title
-                      ? `/movflix/shows/page/${item.id}/${item.name}`
-                      : `/movflix/movies/page/${item.id}/${item.title}`
+                      ? `/movflix/tv/page/${item.id}/${item.name}`
+                      : `/movflix/movie/page/${item.id}/${item.title}`
                   }
                 >
                   <img
@@ -56,8 +56,8 @@ export const MdCarousel = ({ items, moreButton, header, marginTop }) => {
                   className={classes.link}
                   to={
                     !item.title
-                      ? `/movflix/shows/page/${item.id}/${item.name}`
-                      : `/movflix/movies/page/${item.id}/${item.title}`
+                      ? `/movflix/tv/page/${item.id}/${item.name}`
+                      : `/movflix/movie/page/${item.id}/${item.title}`
                   }
                 >
                   <p className={classes.title}>{item.title || item.name}</p>

@@ -7,12 +7,7 @@ import { Link } from "react-router-dom";
 export function FsCarousel({ items }) {
   return (
     <div className={classes.wrapper}>
-      <Swiper
-        navigation={true}
-        modules={[Navigation]}
-        className="mySwiper"
-        style={{ height: "80vh" }}
-      >
+      <Swiper navigation={true} modules={[Navigation]} className="mySwiper" style={{ height: "80vh" }}>
         {items.map((item) => {
           return (
             <SwiperSlide key={item.id}>
@@ -25,21 +20,13 @@ export function FsCarousel({ items }) {
                 <h3 className={classes.new}>New</h3>
                 <h3 className={classes.title}>{item.title}</h3>
                 <div className={classes.info}>
-                  <h3 className={classes.year}>
-                    {item.release_date
-                      ? item.release_date.slice(0, 4)
-                      : "No year"}
-                  </h3>
+                  <h3 className={classes.year}>{item.release_date ? item.release_date.slice(0, 4) : "No year"}</h3>
 
                   <h3 className={classes.vote}>{`${item.vote_average}/10`}</h3>
                 </div>
                 <p className={classes.description}>{item.overview}</p>
                 <div className={classes.actionButtons}>
-                  <Link
-                    className={classes.button}
-                    value={item.id}
-                    to={`/movflix/movies/page/${item.id}/${item.title}`}
-                  >
+                  <Link className={classes.button} value={item.id} to={`/movflix/movie/page/${item.id}/${item.title}`}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="32"

@@ -10,11 +10,11 @@ export const CastPageShow = () => {
   let dispatch = useDispatch();
   let params = useParams();
   let navigate = useNavigate();
-  let title = useSelector((state) => state.movies.currentShow.name);
-  let date = useSelector((state) => state.movies.currentShow.first_air_date);
-  let full_credits = useSelector((state) => state.movies.currentShow.full_credits);
-  let headerImage = useSelector((state) => state.movies.currentShow.poster_path);
-  let isFetching = useSelector((state) => state.movies.isFetching);
+  let title = useSelector((state) => state.shows.currentShow.name);
+  let date = useSelector((state) => state.shows.currentShow.first_air_date);
+  let full_credits = useSelector((state) => state.shows.currentShow.full_credits);
+  let headerImage = useSelector((state) => state.shows.currentShow.poster_path);
+  let isFetching = useSelector((state) => state.shows.isFetching);
   useEffect(() => {
     dispatch(getShowSearchCrew(params.id));
   }, [params.id, dispatch]);

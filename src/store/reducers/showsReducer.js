@@ -20,6 +20,7 @@ const defaultStore = {
     },
   ],
   currentShow: {
+    video_url: [{ key: "" }],
     full_credits: {
       cast: [
         {
@@ -155,6 +156,7 @@ export const showsReducer = (state = defaultStore, action) => {
           reviews: action.reviews,
           ratings: action.ratings,
           credits: action.credits,
+          video_url: action.video_url,
         },
       };
 

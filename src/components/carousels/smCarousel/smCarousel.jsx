@@ -47,8 +47,8 @@ export const SmCarousel = ({ items, moreButton, header, isLight, marginTop }) =>
                 <Link
                   to={
                     !item.title
-                      ? `/movflix/shows/page/${item.id}/${item.name}`
-                      : `/movflix/movies/page/${item.id}/${item.title}`
+                      ? `/movflix/tv/page/${item.id}/${item.name}`
+                      : `/movflix/movie/page/${item.id}/${item.title}`
                   }
                 >
                   <img
@@ -61,8 +61,8 @@ export const SmCarousel = ({ items, moreButton, header, isLight, marginTop }) =>
                   className={classes.link}
                   to={
                     !item.title
-                      ? `/movflix/shows/page/${item.id}/${item.name}`
-                      : `/movflix/movies/page/${item.id}/${item.title}`
+                      ? `/movflix/tv/page/${item.id}/${item.name}`
+                      : `/movflix/movie/page/${item.id}/${item.title}`
                   }
                 >
                   <p key={i} className={titleClass}>

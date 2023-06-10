@@ -1,3 +1,7 @@
+.wrapper {
+  display: flex;
+  gap: 100px;
+}
 .social {
   width: 50px;
   height: 50;

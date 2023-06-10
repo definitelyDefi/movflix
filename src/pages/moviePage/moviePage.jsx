@@ -5,7 +5,7 @@ import background from "./../../assets/background.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentMovie } from "../../http";
 import poster_placeholder from "./../../assets/no_poster.png";
-import { SmCarousel, Description, Header, ReviewCarousel, Preloader, DetailsBlock } from "../../components";
+import { SmCarousel, Description, Header, ReviewCarousel, Preloader, DetailsBlock, Trailer } from "../../components";
 import { CsCarousel } from "../../components/carousels/csCarousel/csCarousel";
 
 export const MoviePage = () => {
@@ -52,18 +52,19 @@ export const MoviePage = () => {
 
               <div className={classes.castBlock}>
                 <h3 className={classes.castHeader}>The cast of the movie</h3>
-                {/* <CastCarousel items={currentMovie.credits.cast.slice(0, 11)} /> */}
+
                 <CsCarousel
                   items={currentMovie.credits.cast.slice(0, 11)}
                   moreButton={`${location.pathname}/cast_crew`}
                 />
               </div>
+              {currentMovie.video_url ? <Trailer id={currentMovie.video_url.key} /> : null}
               {currentMovie.similar.length === 0 ? null : (
                 <SmCarousel
                   header={"Similar movies"}
                   isLight={true}
                   items={currentMovie.similar}
-                  moreButton={`/movflix/categories/movies/similar/${currentMovie.id}`}
+                  moreButton={`/movflix/categories/movie/similar/${currentMovie.id}`}
                   marginTop={"30px"}
                 />
               )}

@@ -69,8 +69,8 @@ export const PersonPage = () => {
                             <span
                               onClick={() => {
                                 item.media_type === "tv"
-                                  ? navigate(`/movflix/shows/page/${item.id}/${item.title}`)
-                                  : navigate(`/movflix/movies/page/${item.id}/${item.title}`);
+                                  ? navigate(`/movflix/tv/page/${item.id}/${item.title}`)
+                                  : navigate(`/movflix/movie/page/${item.id}/${item.title}`);
                               }}
                             >
                               {item.title}

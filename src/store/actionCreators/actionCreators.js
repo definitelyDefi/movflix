@@ -42,6 +42,7 @@ export const setCurrentMovie = (payload) => ({
   reviews: payload.reviews,
   similar: payload.similar,
   credits: payload.credits,
+  video_url: payload.video_url,
 });
 
 export const setCurrentPerson = (payload) => ({
@@ -58,6 +59,7 @@ export const setCurrentShow = (payload) => ({
   similar: payload.similar,
   ratings: payload.ratings,
   credits: payload.credits,
+  video_url: payload.video_url,
 });
 
 export const setDetails = (payload) => ({

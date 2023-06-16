@@ -40,7 +40,7 @@ export const routes = [
     path: "/movflix/tv/page/:id/:title",
     component: ShowPage,
   },
-  { path: "/movflix/discover/:content_type/:genre/:genreName", component: Discover },
+  { path: "/movflix/discover/:content_type/:filter/:filterName/:filterType", component: Discover },
   {
     path: "/movflix/movie/page/:id/:title/cast_crew",
     component: CastPageMovie,

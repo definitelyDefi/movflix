@@ -28,7 +28,7 @@ export function Description({ data, type }) {
         {data.genres ? (
           <div className={classes.genres}>
             {data.genres.map((item) => (
-              <Link to={`/movflix/discover/${type}/${item.id}/${item.name}`}>
+              <Link to={`/movflix/discover/${type}/${item.id}/${item.name}/genre`}>
                 <button className={classes.genre} value={item.id} key={item.id}>
                   {item.name}
                 </button>

@@ -134,7 +134,7 @@ export const Results = () => {
                           : poster_placeholder
                       }
                       onClick={() => {
-                        navigate(`/movflix/persons/page/${person.id}/${person.name}`);
+                        navigate(`/movflix/person/page/${person.id}/${person.name}`);
                       }}
                       alt={" "}
                     />
@@ -149,10 +149,7 @@ export const Results = () => {
                   </div>
                 ))}
               {persons.length > 6 ? (
-                <button
-                  className={classes.viewMore}
-                  onClick={() => navigate(`/movflix/search/expand/${query}/persons`)}
-                >
+                <button className={classes.viewMore} onClick={() => navigate(`/movflix/search/expand/${query}/person`)}>
                   View more
                 </button>
               ) : null}

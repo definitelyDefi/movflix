@@ -65,7 +65,7 @@ export const BurgerMenu = ({ status }) => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu variant="dark">
-                <Dropdown.Item href="/movflix/categories/persons/popular">Popular actors</Dropdown.Item>
+                <Dropdown.Item href="/movflix/categories/person/popular">Popular actors</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>

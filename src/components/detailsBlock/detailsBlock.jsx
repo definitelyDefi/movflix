@@ -3,6 +3,7 @@ import { get_just_watch_query } from "../../helpers/getJustWatchQuery";
 
 import { JustWatch, Facebook, Homepage, Instagram, Twitter, Imdb } from "./../decorative/icons";
 import classes from "./detailsBlock.module.css";
+import { Link } from "react-router-dom";
 
 export const DetailsBlock = (props) => {
   const { content, variant, type, content_type } = props;
@@ -11,7 +12,7 @@ export const DetailsBlock = (props) => {
     <div className={classes.wrapper}>
       <div>
         <h3 className={classes.title}>{type === "person" ? "Personal information" : "Details"}</h3>
-        <div className={variant === "show" || type === "person" ? `${classes.info} ${classes.forShow}` : classes.info}>
+        <div className={variant === "tv" || type === "person" ? `${classes.info} ${classes.forShow}` : classes.info}>
           <div className={classes.block}>
             <div className={classes.socials}>
               {content.external_ids.facebook_id ? (
@@ -139,9 +140,11 @@ export const DetailsBlock = (props) => {
               <h3 className={classes.title}>Keywords</h3>
               <div className={classes.keywords}>
                 {content.keywords.map((keyword) => (
-                  <div key={keyword.id} className={classes.keyword}>
-                    {keyword.name}
-                  </div>
+                  <Link to={`/movflix/discover/${content_type}/${keyword.id}/${keyword.name}/keyword`}>
+                    <button className={classes.keyword} value={keyword.id} key={keyword.id}>
+                      {keyword.name}
+                    </button>
+                  </Link>
                 ))}
               </div>
             </div>

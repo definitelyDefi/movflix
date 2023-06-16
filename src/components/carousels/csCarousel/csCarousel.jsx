@@ -29,7 +29,7 @@ export const CsCarousel = ({ items, moreButton }) => {
                   />
                 </Link>
 
-                <Link className={classes.link} to={`/movflix/persons/page/${item.id}/${item.name}`}>
+                <Link className={classes.link} to={`/movflix/person/page/${item.id}/${item.name}`}>
                   <p className={classes.name}> {item.name}</p>
                 </Link>
                 <h3 className={classes.character}>{item.character}</h3>

@@ -45,6 +45,9 @@
   padding: 4px 10px;
   border-radius: 4px;
 }
+.keyword:hover {
+  opacity: 0.6;
+}
 
 .forShow {
   flex-direction: column;

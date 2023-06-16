@@ -323,11 +323,30 @@ export const getPerson = (person_id) => async (dispatch) => {
   dispatch(setMoviesFetch(false));
 };
 
-export const getByGenre = (content_type, genre, page) => async (dispatch) => {
+export const getDiscover = (content_type, filter, page, filterType) => async (dispatch) => {
+  dispatch(setMoviesFetch(true));
+  let response;
+  filterType === "genre"
+    ? (response = await tmdb_api.get(`discover/${content_type}`, {
+        params: { ...defaultParams, sort_by: "vote_count.desc", with_genres: filter, page: page },
+      }))
+    : (response = await tmdb_api.get(`discover/${content_type}`, {
+        params: { ...defaultParams, sort_by: "vote_count.desc", with_keywords: filter, page: page },
+      }));
+  dispatch(
+    setByCategory({
+      results: response.data.results,
+      totalPages: response.data.total_pages,
+    })
+  );
+  dispatch(setMoviesFetch(false));
+};
+
+export const getByKeyword = (content_type, keyword, page) => async (dispatch) => {
   dispatch(setMoviesFetch(true));
 
   const response = await tmdb_api.get(`discover/${content_type}`, {
-    params: { ...defaultParams, sort_by: "vote_count.desc", with_genres: genre, page: page },
+    params: { ...defaultParams, sort_by: "vote_count.desc", with_keywords: keyword, page: page },
   });
   dispatch(
     setByCategory({
@@ -337,4 +356,3 @@ export const getByGenre = (content_type, genre, page) => async (dispatch) => {
   );
   dispatch(setMoviesFetch(false));
 };
-// 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=comedy'

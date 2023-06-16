@@ -72,7 +72,7 @@ export const ShowPage = () => {
                   </div>
                 </div>
 
-                <DetailsBlock content={currentShow} variant="show" content_type="show" />
+                <DetailsBlock content={currentShow} variant="tv" content_type="tv" />
               </div>
               <SmCarousel
                 header={"Similar shows"}

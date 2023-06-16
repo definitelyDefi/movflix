@@ -42,12 +42,12 @@ export const CastPageShow = () => {
                           : person_placeholder
                       }
                       alt={""}
-                      onClick={() => navigate(`/movflix/persons/page/${person.id}/${person.name}`)}
+                      onClick={() => navigate(`/movflix/person/page/${person.id}/${person.name}`)}
                     />
                     <div className={classes.castInfo}>
                       <h3
                         className={classes.castName}
-                        onClick={() => navigate(`/movflix/persons/page/${person.id}/${person.name}`)}
+                        onClick={() => navigate(`/movflix/person/page/${person.id}/${person.name}`)}
                       >
                         {person.name}
                       </h3>
@@ -82,12 +82,12 @@ export const CastPageShow = () => {
                           : person_placeholder
                       }
                       alt={""}
-                      onClick={() => navigate(`/movflix/persons/page/${person.id}/${person.name}`)}
+                      onClick={() => navigate(`/movflix/person/page/${person.id}/${person.name}`)}
                     />
                     <div className={classes.castInfo}>
                       <h3
                         className={classes.castName}
-                        onClick={() => navigate(`/movflix/persons/page/${person.id}/${person.name}`)}
+                        onClick={() => navigate(`/movflix/person/page/${person.id}/${person.name}`)}
                       >
                         {person.name}
                       </h3>

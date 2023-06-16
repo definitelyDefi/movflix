@@ -5,7 +5,7 @@ import { JustWatch, Facebook, Homepage, Instagram, Twitter, Imdb } from "./../de
 import classes from "./detailsBlock.module.css";
 
 export const DetailsBlock = (props) => {
-  const { content, variant, type, content_type, video } = props;
+  const { content, variant, type, content_type } = props;
 
   return (
     <div className={classes.wrapper}>

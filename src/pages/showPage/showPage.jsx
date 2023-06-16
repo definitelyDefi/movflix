@@ -52,7 +52,7 @@ export const ShowPage = () => {
                       : poster_placeholder
                   }
                 />
-                <Description data={currentShow} type={"tv show"} />
+                <Description data={currentShow} type={"tv"} />
               </div>
             </div>
             <div className={classes.infoWrapper}>

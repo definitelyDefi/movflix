@@ -13,6 +13,7 @@ import {
   PersonPage,
   AboutPage,
 } from "./pages";
+import { Discover } from "./pages/discoverPage/discover";
 
 export const routes = [
   {
@@ -39,6 +40,7 @@ export const routes = [
     path: "/movflix/tv/page/:id/:title",
     component: ShowPage,
   },
+  { path: "/movflix/discover/:content_type/:genre/:genreName", component: Discover },
   {
     path: "/movflix/movie/page/:id/:title/cast_crew",
     component: CastPageMovie,

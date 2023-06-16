@@ -322,3 +322,19 @@ export const getPerson = (person_id) => async (dispatch) => {
   dispatch(setCurrentPerson(response.data));
   dispatch(setMoviesFetch(false));
 };
+
+export const getByGenre = (content_type, genre, page) => async (dispatch) => {
+  dispatch(setMoviesFetch(true));
+
+  const response = await tmdb_api.get(`discover/${content_type}`, {
+    params: { ...defaultParams, sort_by: "vote_count.desc", with_genres: genre, page: page },
+  });
+  dispatch(
+    setByCategory({
+      results: response.data.results,
+      totalPages: response.data.total_pages,
+    })
+  );
+  dispatch(setMoviesFetch(false));
+};
+// 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=comedy'

@@ -1,10 +1,9 @@
 import React from "react";
 import classes from "./typeItem.module.css";
 import poster_placeholder from "./../../assets/no_poster.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export function TypeItem({ content_type, item, onLoad }) {
-  let navigate = useNavigate();
+export function TypeItem({ content_type, item }) {
   return (
     <div className={classes.item}>
       <Link to={`/movflix/${content_type}/page/${item.id}/${item.title || item.name}`}>

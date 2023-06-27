@@ -14,19 +14,20 @@ export const MdCarousel = ({ items, moreButton, header, marginTop }) => {
         centeredSlides={false}
         className="mySwiper"
         breakpoints={{
-          640: {
+          300: {
+            width: 300,
+            slidesPerView: 1,
+          },
+
+          620: {
             width: 640,
             slidesPerView: 2,
+            spaceBetween: 20,
           },
 
-          768: {
-            width: 768,
-            slidesPerView: 3,
-          },
-
-          1024: {
+          1030: {
             width: 1024,
-            slidesPerView: 4,
+            slidesPerView: 3,
           },
 
           1366: {

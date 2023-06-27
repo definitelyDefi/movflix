@@ -24,7 +24,7 @@
   text-align: center;
   margin-bottom: 50px;
   font-family: "Montserrat", sans-serif;
-  font-weight: 400px;
+  font-weight: 400;
   font-size: 23px;
   color: white;
 }
@@ -103,15 +103,26 @@
 .swiper-slide img {
 }
 
-/*  Small devices (landscape phones, 576px and up) */
-
-@media (min-width: 576px) {
+@media (min-width: 360px) {
+  .title {
+    font-size: 40px;
+  }
+  .description {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  .button {
+    width: 100px;
+    font-size: 14px;
+    padding: 1px;
+  }
+  .content {
+    margin-top: 50px;
+  }
 }
-/* Medium devices (tablets, 768px and up) */
-
 @media (min-width: 768px) {
 }
-/*  Large devices (desktops, 992px and up) */
 
 @media (min-width: 992px) {
   .content {

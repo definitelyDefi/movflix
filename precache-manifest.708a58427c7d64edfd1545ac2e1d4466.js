@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "de1f4a66c962343445ec",
-    "url": "/movflix/static/css/main.7e1e936f.chunk.css"
+    "revision": "dc08dfcfceb55ffe2aed",
+    "url": "/movflix/static/css/main.523e3136.chunk.css"
   },
   {
-    "revision": "de1f4a66c962343445ec",
-    "url": "/movflix/static/js/main.de1f4a66.chunk.js"
+    "revision": "dc08dfcfceb55ffe2aed",
+    "url": "/movflix/static/js/main.dc08dfcf.chunk.js"
   },
   {
     "revision": "344d51a67d3c85c30e3b",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/movflix/static/media/avatar_author.cec41d1a.png"
   },
   {
-    "revision": "f7a86867bf149f440b84832dadfe1a13",
+    "revision": "d157e92ca497a05fe7653e90f7723527",
     "url": "/movflix/index.html"
   }
 ];

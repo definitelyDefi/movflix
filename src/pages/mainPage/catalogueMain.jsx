@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React, {useEffect} from "react";
 import classes from "./catalogueMain.module.css";
-import { getMainPageMovies } from "../../http";
-import { useDispatch, useSelector } from "react-redux/es/exports";
-import { Header, Preloader, FsCarousel, MdCarousel, SmCarousel, SearchBar } from "../../components";
-import { ScrollButton } from "../../components/decorative/buttons/buttons";
+import {getMainPageMovies} from "../../http";
+import {useDispatch, useSelector} from "react-redux/es/exports";
+import {Header, Preloader, FsCarousel, MdCarousel, SmCarousel, SearchBar} from "../../components";
+import {ScrollButton} from "../../components/decorative/buttons/buttons";
 
 export const CatalogueMain = () => {
   const dispatch = useDispatch();
@@ -33,7 +33,7 @@ export const CatalogueMain = () => {
                 header={"Top rated shows"}
                 isLight={false}
                 items={topShows}
-                moreButton={`/movflix/categories/movies/top rated`}
+                moreButton={`/movflix/categories/movie/top rated`}
                 marginTop={"30px"}
               />
 

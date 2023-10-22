@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import classes from "./castPage.module.css";
 import { getShowSearchCrew } from "../../http";
 import { useDispatch, useSelector } from "react-redux";

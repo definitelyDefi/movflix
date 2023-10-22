@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { useParams } from "react-router";
+import React, {useEffect, useState} from "react";
+import {useSelector} from "react-redux";
+import {useParams} from "react-router";
 import classes from "./typeExpanded.module.css";
-import { getByCategory } from "./../../http";
-import { useDispatch } from "react-redux";
-import { Header, Preloader, PagesSwitcher, TypeItems } from "../../components";
+import {getByCategory} from "./../../http";
+import {useDispatch} from "react-redux";
+import {Header, Preloader, PagesSwitcher, TypeItems} from "../../components";
 
 export const TypeExpanded = () => {
   let [currentPage, setCurrentPage] = useState(1);
@@ -13,13 +13,13 @@ export const TypeExpanded = () => {
   let isFetching = useSelector((state) => state.global.isFetching);
 
   let params = useParams();
-  let { category, content_type } = params;
+  let {category, content_type} = params;
   let id = params["*"];
 
   let items = useSelector((state) => state.search.byCategory.results);
   const api_key = process.env.REACT_APP_MOVIES_API_KEY;
   let totalPages = useSelector((state) => state.search.byCategory.totalPages);
-
+  debugger;
   useEffect(() => {
     dispatch(getByCategory(currentPage, category, content_type, id | null));
   }, [api_key, currentPage, dispatch, id, category, content_type]);

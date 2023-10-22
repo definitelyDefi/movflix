@@ -16,19 +16,19 @@ export const ResultsExpanded = () => {
   let { content_type, query } = params;
   let items;
 
-  if (content_type === "movies") {
+  if (content_type === "movie") {
     items = useSelector((state) => state.search.searchResults.movies);
-  } else if (content_type === "shows") {
+  } else if (content_type === "tv") {
     items = useSelector((state) => state.search.searchResults.shows);
-  } else if (content_type === "persons") {
+  } else if (content_type === "person") {
     items = useSelector((state) => state.search.searchResults.persons);
   }
   let totalPages = useSelector((state) => state.search.searchResults.totalPages);
 
   useEffect(() => {
-    if (content_type === "movies") {
+    if (content_type === "movie") {
       dispatch(getSearchMovies(query, currentPage || 1));
-    } else if (content_type === "shows") {
+    } else if (content_type === "tv") {
       dispatch(getSearchTv(query, currentPage || 1));
     } else {
       dispatch(getSearchPersons(query, currentPage || 1));

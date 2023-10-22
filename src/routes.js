@@ -5,12 +5,12 @@ import {
   Results,
   ResultsExpanded,
   ShowPage,
-  TypeExpanded,
   SeasonsPage,
   EpisodesPage,
   CastPageShow,
   CastPageMovie,
   PersonPage,
+  TypeExpanded,
   AboutPage,
 } from "./pages";
 import { Discover } from "./pages/discoverPage/discover";

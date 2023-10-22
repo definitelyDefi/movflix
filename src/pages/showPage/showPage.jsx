@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import { useLocation, useParams } from "react-router";
+import React, {useEffect} from "react";
+import {useLocation, useParams} from "react-router";
 import classes from "./showPage.module.css";
 import background from "./../../assets/background.jpg";
 import poster_placeholder from "./../../assets/no_poster.png";
-import { useDispatch, useSelector } from "react-redux";
-import { getCurrentShow } from "../../http";
+import {useDispatch, useSelector} from "react-redux";
+import {getCurrentShow} from "../../http";
 import {
   Header,
   SmCarousel,
@@ -78,7 +78,7 @@ export const ShowPage = () => {
                 header={"Similar shows"}
                 isLight={true}
                 items={currentShow.similar}
-                moreButton={`/movflix/categories/shows/similar/${currentShow.id}`}
+                moreButton={`/movflix/categories/tv/similar/${currentShow.id}`}
                 marginTop={"30px"}
               />
             </div>

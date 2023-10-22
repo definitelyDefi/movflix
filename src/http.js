@@ -40,18 +40,18 @@ const omdb_api = axios.create({
 export const getMainPageMovies = () => async (dispatch) => {
   dispatch(setMoviesFetch(true));
   const [np_movies, tp_shows, pop_movies, up_movies, pop_shows] = await Promise.all([
-    tmdb_api.get("movie/now_playing", { params: defaultParams }),
-    tmdb_api.get("tv/top_rated", { params: defaultParams }),
-    tmdb_api.get("movie/popular", { params: defaultParams }),
-    tmdb_api.get("movie/upcoming", { params: defaultParams }),
-    tmdb_api.get("tv/popular", { params: defaultParams }),
+    tmdb_api.get("movie/now_playing", {params: defaultParams}),
+    tmdb_api.get("tv/top_rated", {params: defaultParams}),
+    tmdb_api.get("movie/popular", {params: defaultParams}),
+    tmdb_api.get("movie/upcoming", {params: defaultParams}),
+    tmdb_api.get("tv/popular", {params: defaultParams}),
   ]);
 
   dispatch(setLatestMovies(np_movies.data.results));
-  dispatch(setTopShows({ topShows: tp_shows.data.results }));
-  dispatch(setPopularMovies({ popularMovies: pop_movies.data.results }));
-  dispatch(setUpcomingMovies({ upcomingMovies: up_movies.data.results }));
-  dispatch(setPopularShows({ popularShows: pop_shows.data.results }));
+  dispatch(setTopShows({topShows: tp_shows.data.results}));
+  dispatch(setPopularMovies({popularMovies: pop_movies.data.results}));
+  dispatch(setUpcomingMovies({upcomingMovies: up_movies.data.results}));
+  dispatch(setPopularShows({popularShows: pop_shows.data.results}));
 
   dispatch(setMoviesFetch(false));
 };
@@ -68,7 +68,7 @@ export const getNewMovies = () => async (dispatch) => {
 export const getTopMovies = (currentPage) => async (dispatch) => {
   dispatch(setMoviesFetch(true));
   const response = await tmdb_api.get("movie/now_playing", {
-    params: { ...defaultParams, page: currentPage },
+    params: {...defaultParams, page: currentPage},
   });
   dispatch(
     setTopMovies({
@@ -82,7 +82,7 @@ export const getTopMovies = (currentPage) => async (dispatch) => {
 export const getPopularMovies = (currentPage) => async (dispatch) => {
   dispatch(setMoviesFetch(true));
   const response = await tmdb_api.get("movie/popular", {
-    params: { ...defaultParams, page: currentPage },
+    params: {...defaultParams, page: currentPage},
   });
   dispatch(
     setPopularMovies({
@@ -96,7 +96,7 @@ export const getPopularMovies = (currentPage) => async (dispatch) => {
 export const getUpcomingMovies = (currentPage) => async (dispatch) => {
   dispatch(setMoviesFetch(true));
   const response = await tmdb_api.get("movie/upcoming", {
-    params: { ...defaultParams, page: currentPage },
+    params: {...defaultParams, page: currentPage},
   });
   dispatch(
     setUpcomingMovies({
@@ -154,7 +154,7 @@ export const getCurrentMovie = (movie_id, title) => async (dispatch) => {
 export const getSearchMovies = (query, page) => async (dispatch) => {
   dispatch(setMoviesFetch(true));
   const response = await tmdb_api.get("search/movie", {
-    params: { ...defaultParams, page, query },
+    params: {...defaultParams, page, query},
   });
   dispatch(
     setSearchMovies({
@@ -169,7 +169,7 @@ export const getSearchResults = (query, page) => async (dispatch) => {
   dispatch(setMoviesFetch(true));
 
   const movies = await tmdb_api.get("search/movie", {
-    params: { ...defaultParams, page, query },
+    params: {...defaultParams, page, query},
   });
   dispatch(
     setSearchMovies({
@@ -178,7 +178,7 @@ export const getSearchResults = (query, page) => async (dispatch) => {
     })
   );
   const shows = await tmdb_api.get("search/tv", {
-    params: { ...defaultParams, page, query },
+    params: {...defaultParams, page, query},
   });
   dispatch(
     setSearchTv({
@@ -187,7 +187,7 @@ export const getSearchResults = (query, page) => async (dispatch) => {
   );
 
   const actors = await tmdb_api.get("search/person", {
-    params: { ...defaultParams, page, query },
+    params: {...defaultParams, page, query},
   });
   dispatch(
     setSearchPersons({
@@ -200,7 +200,7 @@ export const getSearchResults = (query, page) => async (dispatch) => {
 export const getSearchTv = (query, page) => async (dispatch) => {
   dispatch(setMoviesFetch(true));
   const shows = await tmdb_api.get("search/tv", {
-    params: { ...defaultParams, page, query },
+    params: {...defaultParams, page, query},
   });
   dispatch(
     setSearchTv({
@@ -215,7 +215,7 @@ export const getSearchPersons = (query, page) => async (dispatch) => {
   dispatch(setMoviesFetch(true));
 
   const actors = await tmdb_api.get("search/person", {
-    params: { ...defaultParams, page, query },
+    params: {...defaultParams, page, query},
   });
   dispatch(
     setSearchPersons({
@@ -258,7 +258,7 @@ export const getCurrentShow = (show_id) => async (dispatch) => {
 export const getSearchEpisodes = (show_id, season_number) => async (dispatch) => {
   dispatch(setMoviesFetch(true));
   const response = await tmdb_api.get(`tv/${show_id}/season/${season_number}`, {
-    params: { ...defaultParams },
+    params: {...defaultParams},
   });
   dispatch(
     setCurrentSeason({
@@ -275,17 +275,17 @@ export const getSearchEpisodes = (show_id, season_number) => async (dispatch) =>
 export const getShowSearchCrew = (show_id) => async (dispatch) => {
   dispatch(setMoviesFetch(true));
   const response = await tmdb_api.get(`tv/${show_id}/aggregate_credits`, {
-    params: { ...defaultParams },
+    params: {...defaultParams},
   });
-  dispatch(setShowFullCredits({ cast: response.data.cast, crew: response.data.crew }));
+  dispatch(setShowFullCredits({cast: response.data.cast, crew: response.data.crew}));
   dispatch(setMoviesFetch(false));
 };
 
 export const getByCategory = (page, category, content_type, id) => async (dispatch) => {
   dispatch(setMoviesFetch(true));
-  if (content_type !== "similar") {
+  if (category !== "similar") {
     const response = await tmdb_api.get(`${content_type}/${category}`, {
-      params: { ...defaultParams, page: page },
+      params: {...defaultParams, page: page},
     });
     dispatch(
       setByCategory({
@@ -293,9 +293,9 @@ export const getByCategory = (page, category, content_type, id) => async (dispat
         totalPages: response.data.total_pages,
       })
     );
-  } else if (content_type === "similar") {
+  } else if (category === "similar") {
     const response = await tmdb_api.get(`${content_type}/${id}/similar`, {
-      params: { ...defaultParams, page },
+      params: {...defaultParams, page},
     });
     dispatch(
       setByCategory({
@@ -317,7 +317,7 @@ export const getPerson = (person_id) => async (dispatch) => {
   //     dispatch(setCurrentPerson(result));
   //   });
   const response = await tmdb_api.get(`person/${person_id}`, {
-    params: { ...defaultParams, append_to_response: "combined_credits,external_ids,images,tagged_images" },
+    params: {...defaultParams, append_to_response: "combined_credits,external_ids,images,tagged_images"},
   });
   dispatch(setCurrentPerson(response.data));
   dispatch(setMoviesFetch(false));
@@ -328,10 +328,10 @@ export const getDiscover = (content_type, filter, page, filterType) => async (di
   let response;
   filterType === "genre"
     ? (response = await tmdb_api.get(`discover/${content_type}`, {
-        params: { ...defaultParams, sort_by: "vote_count.desc", with_genres: filter, page: page },
+        params: {...defaultParams, sort_by: "vote_count.desc", with_genres: filter, page: page},
       }))
     : (response = await tmdb_api.get(`discover/${content_type}`, {
-        params: { ...defaultParams, sort_by: "vote_count.desc", with_keywords: filter, page: page },
+        params: {...defaultParams, sort_by: "vote_count.desc", with_keywords: filter, page: page},
       }));
   dispatch(
     setByCategory({
@@ -346,7 +346,7 @@ export const getByKeyword = (content_type, keyword, page) => async (dispatch) =>
   dispatch(setMoviesFetch(true));
 
   const response = await tmdb_api.get(`discover/${content_type}`, {
-    params: { ...defaultParams, sort_by: "vote_count.desc", with_keywords: keyword, page: page },
+    params: {...defaultParams, sort_by: "vote_count.desc", with_keywords: keyword, page: page},
   });
   dispatch(
     setByCategory({

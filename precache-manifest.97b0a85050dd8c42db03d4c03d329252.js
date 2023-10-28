@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "b1bc5f875819ff89d626",
-    "url": "/movflix/static/css/main.523e3136.chunk.css"
+    "revision": "50561c19004acf973aa1",
+    "url": "/movflix/static/css/main.12dbc609.chunk.css"
   },
   {
-    "revision": "b1bc5f875819ff89d626",
-    "url": "/movflix/static/js/main.b1bc5f87.chunk.js"
+    "revision": "50561c19004acf973aa1",
+    "url": "/movflix/static/js/main.50561c19.chunk.js"
   },
   {
-    "revision": "344d51a67d3c85c30e3b",
+    "revision": "06ef4a5d7b548d8bf126",
     "url": "/movflix/static/css/1.37cb671d.chunk.css"
   },
   {
-    "revision": "344d51a67d3c85c30e3b",
-    "url": "/movflix/static/js/1.344d51a6.chunk.js"
+    "revision": "06ef4a5d7b548d8bf126",
+    "url": "/movflix/static/js/1.06ef4a5d.chunk.js"
   },
   {
     "revision": "6918e23c6c8df685206d",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/movflix/static/media/avatar_author.cec41d1a.png"
   },
   {
-    "revision": "118ca53833d3293898ec19656b64a0d8",
+    "revision": "eb758069fea5baebfbd3d1bbc8c1b6b0",
     "url": "/movflix/index.html"
   }
 ];

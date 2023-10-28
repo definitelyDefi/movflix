@@ -1,16 +1,16 @@
 import React from "react";
 import classes from "./smCarousel.module.css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Link } from "react-router-dom";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Link} from "react-router-dom";
 
-export const SmCarousel = ({ items, moreButton, header, isLight, marginTop }) => {
+export const SmCarousel = ({items, moreButton, header, isLight, marginTop}) => {
   let headerClass = isLight ? `${classes.header} ${classes.light}` : classes.header;
 
   let titleClass = isLight ? `${classes.title} ${classes.light}` : classes.title;
 
   return (
     <>
-      <h1 className={headerClass} style={marginTop ? { marginTop: `${marginTop}` } : null}>
+      <h1 className={headerClass} style={marginTop ? {marginTop: `${marginTop}`} : null}>
         {header}
       </h1>
       <Swiper
@@ -20,8 +20,9 @@ export const SmCarousel = ({ items, moreButton, header, isLight, marginTop }) =>
         className="mySwiper"
         breakpoints={{
           300: {
-            width: 300,
+            width: 200,
             slidesPerView: 1,
+            // spaceBetween: 20,
           },
 
           620: {

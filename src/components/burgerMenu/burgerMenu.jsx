@@ -1,9 +1,9 @@
 import React from "react";
 import classes from "./burgerMenu.module.css";
 import Dropdown from "react-bootstrap/Dropdown";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-export const BurgerMenu = ({ status }) => {
+import {useState} from "react";
+import {useNavigate} from "react-router-dom";
+export const BurgerMenu = ({status}) => {
   const [query, setQuery] = useState("");
   let navigate = useNavigate();
   const handleKeypress = (e) => {
@@ -25,14 +25,14 @@ export const BurgerMenu = ({ status }) => {
               <Dropdown.Toggle
                 variant="secondary"
                 id="dropdown-basic"
-                style={{ width: "200px", backgroundColor: "transparent" }}
+                style={{width: "200px", backgroundColor: "transparent"}}
               >
                 Movies
               </Dropdown.Toggle>
 
               <Dropdown.Menu variant="dark">
                 <Dropdown.Item href="/movflix/categories/movie/popular">Popular movies</Dropdown.Item>
-                <Dropdown.Item href="/movflix/categories/movie/top rated">Best movies</Dropdown.Item>
+                <Dropdown.Item href="/movflix/categories/movie/top_rated">Best movies</Dropdown.Item>
                 <Dropdown.Item href="/movflix/categories/movie/upcoming">Upcoming movies</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
@@ -42,15 +42,15 @@ export const BurgerMenu = ({ status }) => {
               <Dropdown.Toggle
                 variant="secondary"
                 id="dropdown-basic"
-                style={{ width: "200px", backgroundColor: "transparent" }}
+                style={{width: "200px", backgroundColor: "transparent"}}
               >
                 Shows
               </Dropdown.Toggle>
 
               <Dropdown.Menu variant="dark">
                 <Dropdown.Item href="/movflix/categories/tv/popular">Popular shows</Dropdown.Item>
-                <Dropdown.Item href="/movflix/categories/tv/top rated">Best shows</Dropdown.Item>
-                <Dropdown.Item href="/movflix/categories/tv/upcoming">Upcoming shows</Dropdown.Item>
+                <Dropdown.Item href="/movflix/categories/tv/top_rated">Best shows</Dropdown.Item>
+                <Dropdown.Item href="/movflix/categories/tv/on_the_air">On the air now</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -59,7 +59,7 @@ export const BurgerMenu = ({ status }) => {
               <Dropdown.Toggle
                 variant="secondary"
                 id="dropdown-basic"
-                style={{ width: "200px", backgroundColor: "transparent" }}
+                style={{width: "200px", backgroundColor: "transparent"}}
               >
                 Actors
               </Dropdown.Toggle>

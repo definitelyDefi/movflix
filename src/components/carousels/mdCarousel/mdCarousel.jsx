@@ -1,11 +1,11 @@
 import React from "react";
 import classes from "./mdCarousel.module.css";
-import { Link } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
-export const MdCarousel = ({ items, moreButton, header, marginTop }) => {
+import {Link} from "react-router-dom";
+import {Swiper, SwiperSlide} from "swiper/react";
+export const MdCarousel = ({items, moreButton, header, marginTop}) => {
   return (
     <>
-      <h1 className={classes.header} style={marginTop ? { marginTop: `${marginTop}` } : null}>
+      <h1 className={classes.header} style={marginTop ? {marginTop: `${marginTop}`} : null}>
         {header}
       </h1>
       <Swiper
@@ -15,7 +15,7 @@ export const MdCarousel = ({ items, moreButton, header, marginTop }) => {
         className="mySwiper"
         breakpoints={{
           300: {
-            width: 300,
+            width: 200,
             slidesPerView: 1,
           },
 

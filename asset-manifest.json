@@ -1,7 +1,7 @@
 {
-  "main.css": "/movflix/static/css/main.12dbc609.chunk.css",
-  "main.js": "/movflix/static/js/main.50561c19.chunk.js",
-  "main.js.map": "/movflix/static/js/main.50561c19.chunk.js.map",
+  "main.css": "/movflix/static/css/main.711f5523.chunk.css",
+  "main.js": "/movflix/static/js/main.6431ddd4.chunk.js",
+  "main.js.map": "/movflix/static/js/main.6431ddd4.chunk.js.map",
   "static/css/1.37cb671d.chunk.css": "/movflix/static/css/1.37cb671d.chunk.css",
   "static/js/1.06ef4a5d.chunk.js": "/movflix/static/js/1.06ef4a5d.chunk.js",
   "static/js/1.06ef4a5d.chunk.js.map": "/movflix/static/js/1.06ef4a5d.chunk.js.map",
@@ -11,9 +11,9 @@
   "static/media/reviewCarousel.module.css": "/movflix/static/media/arrow-left-circle.6719c6af.svg",
   "static/media/imdb.png": "/movflix/static/media/imdb.71084947.png",
   "static/media/avatar_author.png": "/movflix/static/media/avatar_author.cec41d1a.png",
-  "static/css/main.12dbc609.chunk.css.map": "/movflix/static/css/main.12dbc609.chunk.css.map",
+  "static/css/main.711f5523.chunk.css.map": "/movflix/static/css/main.711f5523.chunk.css.map",
   "static/css/1.37cb671d.chunk.css.map": "/movflix/static/css/1.37cb671d.chunk.css.map",
   "index.html": "/movflix/index.html",
-  "precache-manifest.97b0a85050dd8c42db03d4c03d329252.js": "/movflix/precache-manifest.97b0a85050dd8c42db03d4c03d329252.js",
+  "precache-manifest.7df33747ecb7d2ec0ac79534c4d87403.js": "/movflix/precache-manifest.7df33747ecb7d2ec0ac79534c4d87403.js",
   "service-worker.js": "/movflix/service-worker.js"
 }

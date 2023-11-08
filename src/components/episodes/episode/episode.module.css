@@ -62,3 +62,27 @@
     margin: 10px 10px 40px 10px;
   }
 }
+
+@media (max-width: 500px) {
+  .seasonImage {
+    width: 110px;
+    height: 175px;
+  }
+  .episode {
+    flex-direction: column;
+  }
+  .episodeImage {
+    align-self: center;
+    width: 100%;
+    height: 200px;
+  }
+  .episodeInfo {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 10px;
+  }
+  .episodeDescription {
+    padding: 0 10px;
+  }
+}

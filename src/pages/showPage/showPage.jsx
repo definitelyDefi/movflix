@@ -61,15 +61,18 @@ export const ShowPage = () => {
               <div className={classes.details}>
                 <div>
                   <LastSeason season={lastSeason} title={currentShow.name} />
+
                   {currentShow.video_url ? <Trailer id={currentShow.video_url.key} /> : null}
 
-                  <div className={classes.castBlock}>
-                    <h3 className={classes.castHeader}>The cast of the series</h3>
-                    <CsCarousel
-                      items={currentShow.credits.cast.slice(0, 11)}
-                      moreButton={`${location.pathname}/cast_crew`}
-                    />
-                  </div>
+                  {currentShow.credits.cast.length > 0 ? (
+                    <div className={classes.castBlock}>
+                      <h3 className={classes.castHeader}>The cast of the series</h3>
+                      <CsCarousel
+                        items={currentShow.credits.cast.slice(0, 11)}
+                        moreButton={`${location.pathname}/cast_crew`}
+                      />
+                    </div>
+                  ) : null}
                 </div>
 
                 <DetailsBlock content={currentShow} variant="tv" content_type="tv" />

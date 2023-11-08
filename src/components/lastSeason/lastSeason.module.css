@@ -9,9 +9,9 @@
   max-height: fit-content;
   width: 1125px;
 }
-.lastSeasonBlock {
+/* .lastSeasonBlock {
   width: fit-content;
-}
+} */
 .lastSeasonMisc {
   display: flex;
   gap: 20px;
@@ -70,4 +70,34 @@
 }
 .lastSeasonFooter:hover {
   opacity: 0.6;
+}
+@media (max-width: 500px) {
+  .lastSeason {
+    flex-direction: column;
+    /* display: grid; */
+    width: auto;
+  }
+  .lastSeasonImage {
+    display: none;
+    /* width: 100px;
+    height: 100px; */
+  }
+  .lastSeasonOverview {
+    overflow-wrap: break-word;
+    text-wrap: wrap;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  .lastSeasonHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lastSeasonTitle {
+    text-align: center;
+  }
+  .lastSeasonMisc {
+    align-items: center;
+    justify-content: center;
+  }
 }

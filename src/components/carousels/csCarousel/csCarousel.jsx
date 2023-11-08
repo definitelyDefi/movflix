@@ -1,9 +1,9 @@
 import React from "react";
 import classes from "./csCarousel.module.css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Link } from "react-router-dom";
-import { Pagination } from "swiper";
-export const CsCarousel = ({ items, moreButton }) => {
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Link} from "react-router-dom";
+import {Pagination} from "swiper";
+export const CsCarousel = ({items, moreButton}) => {
   return (
     <>
       <Swiper
@@ -15,6 +15,29 @@ export const CsCarousel = ({ items, moreButton }) => {
           el: `.${classes.swiperCustomPagination}`,
         }}
         modules={[Pagination]}
+        breakpoints={{
+          300: {
+            width: 170,
+            slidesPerView: 1,
+            // spaceBetween: 20,
+          },
+
+          620: {
+            width: 640,
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+
+          1030: {
+            width: 1024,
+            slidesPerView: 4,
+          },
+
+          1366: {
+            width: 1366,
+            slidesPerView: 5,
+          },
+        }}
       >
         {items.map((item, i) => {
           return (

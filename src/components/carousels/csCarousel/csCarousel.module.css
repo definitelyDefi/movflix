@@ -116,3 +116,23 @@
   min-height: 300px;
   max-height: max-content;
 }
+
+@media only screen and (max-width: 600px) {
+  .image {
+    width: 150px;
+    height: 230px;
+  }
+  .title {
+    max-width: 190px;
+  }
+  .info {
+    max-width: 190px;
+  }
+  .swiper-slide {
+    align-items: center;
+    justify-content: center;
+  }
+  .header {
+    font-size: 2em;
+  }
+}

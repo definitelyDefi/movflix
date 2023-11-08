@@ -50,3 +50,14 @@
   flex-direction: column;
   justify-content: center;
 }
+
+@media (max-width: 500px) {
+  .seasonImage {
+    width: 110px;
+    height: 175px;
+  }
+  .season {
+    padding-left: 5px;
+    height: fit-content;
+  }
+}

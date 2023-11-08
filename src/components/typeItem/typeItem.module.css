@@ -44,6 +44,28 @@
   font-size: 1.1em;
 }
 
+@media (max-width: 500px) {
+  .items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .itemImage {
+    width: 130px;
+    height: 200px;
+  }
+  .itemTitle {
+    font-size: 18px;
+    max-width: 100%;
+  }
+  .itemInfo {
+    column-gap: 20px;
+    max-width: 100%;
+  }
+  .itemInfo > * {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 1000px) and (min-width: 436px) {
   .itemImage {
     width: 200px;

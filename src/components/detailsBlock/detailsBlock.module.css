@@ -71,6 +71,13 @@
   flex-wrap: wrap;
 }
 
+@media (max-width: 500px) {
+  .info {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
 @media (max-width: 850px) and (min-width: 500px) {
   .info {
     flex-direction: column;

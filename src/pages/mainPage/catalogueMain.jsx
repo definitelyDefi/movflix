@@ -33,7 +33,7 @@ export const CatalogueMain = () => {
                 header={"Top rated shows"}
                 isLight={false}
                 items={topShows}
-                moreButton={`/movflix/categories/movie/top rated`}
+                moreButton={`/movflix/categories/movie/top_rated`}
                 marginTop={"30px"}
               />
 

@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
-import { useLocation, useParams } from "react-router";
+import React, {useEffect} from "react";
+import {useLocation, useParams} from "react-router";
 import classes from "./moviePage.module.css";
 import background from "./../../assets/background.jpg";
-import { useDispatch, useSelector } from "react-redux";
-import { getCurrentMovie } from "../../http";
+import {useDispatch, useSelector} from "react-redux";
+import {getCurrentMovie} from "../../http";
 import poster_placeholder from "./../../assets/no_poster.png";
-import { SmCarousel, Description, Header, ReviewCarousel, Preloader, DetailsBlock, Trailer } from "../../components";
-import { CsCarousel } from "../../components/carousels/csCarousel/csCarousel";
+import {SmCarousel, Description, Header, ReviewCarousel, Preloader, DetailsBlock, Trailer} from "../../components";
+import {CsCarousel} from "../../components/carousels/csCarousel/csCarousel";
 
 export const MoviePage = () => {
   let params = useParams()["*"].split("/");
@@ -50,14 +50,17 @@ export const MoviePage = () => {
 
               <DetailsBlock content={currentMovie} content_type="movie" />
 
-              <div className={classes.castBlock}>
-                <h3 className={classes.castHeader}>The cast of the movie</h3>
+              {currentMovie.credits.cast.length > 0 ? (
+                <div className={classes.castBlock}>
+                  <h3 className={classes.castHeader}>The cast of the movie</h3>
 
-                <CsCarousel
-                  items={currentMovie.credits.cast.slice(0, 11)}
-                  moreButton={`${location.pathname}/cast_crew`}
-                />
-              </div>
+                  <CsCarousel
+                    items={currentMovie.credits.cast.slice(0, 11)}
+                    moreButton={`${location.pathname}/cast_crew`}
+                  />
+                </div>
+              ) : null}
+
               {currentMovie.video_url ? <Trailer id={currentMovie.video_url.key} /> : null}
               {currentMovie.similar.length === 0 ? null : (
                 <SmCarousel

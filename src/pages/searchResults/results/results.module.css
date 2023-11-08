@@ -117,6 +117,28 @@
   margin-top: 10px;
 }
 
+@media (max-width: 500px) {
+  .container {
+    background-color: #343a40;
+    padding: 10px;
+    min-height: 100vh;
+  }
+  .items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .itemTitle {
+    width: 100%;
+  }
+
+  .itemImage {
+    height: 220px;
+    width: 90%;
+    cursor: pointer;
+    transition: 0.4s all ease;
+  }
+}
 @media (max-width: 1688px) and (min-width: 600px) {
   .itemImage {
     height: 300px;

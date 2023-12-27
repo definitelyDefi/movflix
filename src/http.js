@@ -115,7 +115,7 @@ export const getCurrentMovie = (movie_id, title) => async (dispatch) => {
     params: {
       ...defaultParams,
 
-      append_to_response: "keywords,reviews,external_ids,similar,credits,videos",
+      append_to_response: "keywords,reviews,external_ids,similar,credits,videos,images",
     },
   });
   let video_url = response.data.videos.results.filter(

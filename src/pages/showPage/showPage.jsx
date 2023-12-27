@@ -27,7 +27,9 @@ export const ShowPage = () => {
   let seasons = useSelector((state) => state.shows.currentShow.seasons);
   let lastSeason = seasons.slice(-1)[0];
   let isFetching = useSelector((state) => state.global.isFetching);
-
+  const trailerItem = currentShow.videos.results.filter(
+    (item) => item.type === "Trailer" && item.type === "Trailer"
+  )[0];
   useEffect(() => {
     dispatch(getCurrentShow(show_id));
   }, [dispatch, show_id]);
@@ -62,7 +64,7 @@ export const ShowPage = () => {
                 <div>
                   <LastSeason season={lastSeason} title={currentShow.name} />
 
-                  {currentShow.video_url ? <Trailer id={currentShow.video_url.key} /> : null}
+                  {trailerItem ? <Trailer id={trailerItem.key} /> : null}
 
                   {currentShow.credits.cast.length > 0 ? (
                     <div className={classes.castBlock}>
@@ -77,6 +79,7 @@ export const ShowPage = () => {
 
                 <DetailsBlock content={currentShow} variant="tv" content_type="tv" />
               </div>
+
               <SmCarousel
                 header={"Similar shows"}
                 isLight={true}

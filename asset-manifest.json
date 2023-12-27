@@ -1,7 +1,7 @@
 {
   "main.css": "/movflix/static/css/main.711f5523.chunk.css",
-  "main.js": "/movflix/static/js/main.6431ddd4.chunk.js",
-  "main.js.map": "/movflix/static/js/main.6431ddd4.chunk.js.map",
+  "main.js": "/movflix/static/js/main.966da784.chunk.js",
+  "main.js.map": "/movflix/static/js/main.966da784.chunk.js.map",
   "static/css/1.37cb671d.chunk.css": "/movflix/static/css/1.37cb671d.chunk.css",
   "static/js/1.06ef4a5d.chunk.js": "/movflix/static/js/1.06ef4a5d.chunk.js",
   "static/js/1.06ef4a5d.chunk.js.map": "/movflix/static/js/1.06ef4a5d.chunk.js.map",
@@ -14,6 +14,6 @@
   "static/css/main.711f5523.chunk.css.map": "/movflix/static/css/main.711f5523.chunk.css.map",
   "static/css/1.37cb671d.chunk.css.map": "/movflix/static/css/1.37cb671d.chunk.css.map",
   "index.html": "/movflix/index.html",
-  "precache-manifest.7df33747ecb7d2ec0ac79534c4d87403.js": "/movflix/precache-manifest.7df33747ecb7d2ec0ac79534c4d87403.js",
+  "precache-manifest.412738a2190fb56dbc4e2131d4eaa91d.js": "/movflix/precache-manifest.412738a2190fb56dbc4e2131d4eaa91d.js",
   "service-worker.js": "/movflix/service-worker.js"
 }

@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "966da784d3127b2500ea",
-    "url": "/movflix/static/css/main.711f5523.chunk.css"
+    "revision": "f4bb2896770642c9ebf2",
+    "url": "/movflix/static/css/main.95835406.chunk.css"
   },
   {
-    "revision": "966da784d3127b2500ea",
-    "url": "/movflix/static/js/main.966da784.chunk.js"
+    "revision": "f4bb2896770642c9ebf2",
+    "url": "/movflix/static/js/main.f4bb2896.chunk.js"
   },
   {
-    "revision": "06ef4a5d7b548d8bf126",
-    "url": "/movflix/static/css/1.37cb671d.chunk.css"
+    "revision": "b6ffdab273b25a0fe003",
+    "url": "/movflix/static/css/1.9d578323.chunk.css"
   },
   {
-    "revision": "06ef4a5d7b548d8bf126",
-    "url": "/movflix/static/js/1.06ef4a5d.chunk.js"
+    "revision": "b6ffdab273b25a0fe003",
+    "url": "/movflix/static/js/1.b6ffdab2.chunk.js"
   },
   {
     "revision": "6918e23c6c8df685206d",
@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/movflix/static/media/background.f04decbe.jpg"
   },
   {
-    "revision": "a66aedf937e9ebc8e53f982041cd6700",
-    "url": "/movflix/static/media/arrow-right-circle.a66aedf9.svg"
-  },
-  {
     "revision": "6719c6af8b79c92bf83347cddb8816fd",
     "url": "/movflix/static/media/arrow-left-circle.6719c6af.svg"
+  },
+  {
+    "revision": "a66aedf937e9ebc8e53f982041cd6700",
+    "url": "/movflix/static/media/arrow-right-circle.a66aedf9.svg"
   },
   {
     "revision": "7108494729f1998a285578b65d113092",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/movflix/static/media/avatar_author.cec41d1a.png"
   },
   {
-    "revision": "6e133b7714f987418dd012ab60ed8763",
+    "revision": "59c50fb18f9f8459bdccf2479b2e0bfd",
     "url": "/movflix/index.html"
   }
 ];

@@ -48,12 +48,15 @@
 .roleName {
   font-size: 1em;
 }
-.roleName > span {
-  font-weight: 700;
+.roleLink {
+  font-weight: 800;
+  color: black;
+  text-decoration: none;
   cursor: pointer;
 }
-.roleName > span:hover {
+.roleLink:hover {
   opacity: 0.6;
+  color: initial;
 }
 .roles {
   display: flex;

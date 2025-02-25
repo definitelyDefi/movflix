@@ -14,7 +14,7 @@
 
   font-size: 1em;
   font-weight: 600;
-  font-family: "Poppins", serif;
+  font-family: "Roboto", serif;
 }
 .seasonImage {
   width: 150px;
@@ -29,7 +29,7 @@
   background: transparent;
   font-weight: 600;
   font-size: 1.5em;
-  font-family: "Poppins", serif;
+  font-family: "Roboto", serif;
   display: inline;
   text-align: left;
   margin: 0;
@@ -41,7 +41,7 @@
 }
 
 .seasonDescription {
-  font-family: "Poppins", serif;
+  font-family: "Roboto", serif;
   margin-top: 15px;
   padding-right: 30px;
 }

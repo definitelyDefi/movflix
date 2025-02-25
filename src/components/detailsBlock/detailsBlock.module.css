@@ -89,3 +89,38 @@
     gap: 100px;
   }
 }
+
+.productionCompanies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.companyItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.companyLogo {
+  width: 100px;
+  height: auto;
+}
+
+.watchProviders {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.providerItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.providerLogo {
+  width: 40px;
+  height: auto;
+}

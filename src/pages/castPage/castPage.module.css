@@ -15,7 +15,13 @@
 .castBlock {
   flex-shrink: 1;
 }
-
+.castLink {
+  color: black;
+  text-decoration: none;
+}
+.castLink:hover {
+  color: initial;
+}
 .castHeader,
 .crewHeader {
   font-size: 1.4em;

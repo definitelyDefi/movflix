@@ -1,36 +1,67 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router";
-import { getSearchEpisodes } from "./../../http";
-import { Episodes, SmallHeader, Preloader } from "../../components";
+import React, {useEffect, useState} from "react";
+import {useLocation} from "react-router-dom";
+import {Episodes, SmallHeader, Preloader} from "../../components";
+
+import ErrorPage from "../../components/errorPage/ErrorPage";
+import {tmdb_api} from "../../api";
 
 export const EpisodesPage = () => {
-  let { id, season } = useParams();
+  const location = useLocation();
 
-  let dispatch = useDispatch();
-  let currentSeason = useSelector((state) => state.shows.currentShow.currentSeason);
-  let isFetching = useSelector((state) => state.global.isFetching);
+  const [currentSeason, setCurrentSeason] = useState(null);
+  const [isFetching, setIsFetching] = useState(true);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
-    dispatch(getSearchEpisodes(id, season));
-  }, [dispatch, id, season]);
+    const queryParams = new URLSearchParams(location.search);
+    const showId = queryParams.get("id");
+    const seasonId = queryParams.get("season_id");
+
+    if (!showId || !seasonId) {
+      setError("Missing show ID or season ID.");
+      setIsFetching(false);
+      return;
+    }
+
+    const fetchSeasonDetails = async () => {
+      try {
+        setIsFetching(true);
+
+        const response = await tmdb_api.get(`tv/${showId}/season/${seasonId}`, {
+          params: {language: "en-US"},
+        });
+
+        setCurrentSeason(response.data);
+        setError(null);
+      } catch (err) {
+        console.error("Error fetching season details:", err);
+        setError("Failed to fetch season details.");
+      } finally {
+        setIsFetching(false);
+      }
+    };
+
+    fetchSeasonDetails();
+  }, [location.search]);
+
+  if (isFetching) {
+    return <Preloader />;
+  }
+
+  if (error) {
+    return <ErrorPage message={error} />;
+  }
 
   return (
     <div>
-      {isFetching ? (
-        <Preloader />
-      ) : (
-        <div>
-          <SmallHeader
-            headerImage={currentSeason.poster_path}
-            title={currentSeason.name}
-            date={currentSeason.air_date || ""}
-            text={"Back to seasons"}
-            padding={"330"}
-          />
-
-          <Episodes season={currentSeason} />
-        </div>
-      )}
+      <SmallHeader
+        headerImage={currentSeason.poster_path}
+        title={currentSeason.name || `Season ${currentSeason.season_number}`}
+        date={currentSeason.air_date || ""}
+        text={"Back to seasons"}
+        padding={"330"}
+      />
+      <Episodes season={currentSeason} />
     </div>
   );
 };

@@ -52,7 +52,7 @@
 .tagline {
   font-size: 20px;
   font-weight: 200;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", serif;
   margin-bottom: 20px;
   font-style: italic;
 }
@@ -69,8 +69,31 @@
 
 .description {
   font-size: 18px;
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   font-weight: 300;
+
+  max-height: 300px;
+  padding-right: 10px;
+}
+
+.producers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.name {
+  font-size: 18px;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.job {
+  font-size: 16px;
+  font-weight: 200;
 }
 
 .ageRating {
@@ -139,15 +162,8 @@
   border-right: 1px solid white;
   padding-right: 15px;
 }
-.producers {
-  display: flex;
-  margin-top: 40px;
-  gap: 20px;
-  flex-wrap: wrap;
-  align-items: center;
-}
 
-.name {
+/* .name {
   width: 300px;
   font-size: 18px;
   margin-bottom: 5px;
@@ -157,8 +173,34 @@
 .job {
   font-size: 16px;
   font-weight: 200;
+} */
+.actionContainer {
+  position: relative;
 }
 
+.message {
+  position: absolute;
+  width: max-content;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 14px;
+  animation: fadeOut 1.5s ease-in-out forwards;
+  opacity: 0.8;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @media (max-width: 500px) {
   .genre {
     font-size: 12px;
@@ -179,8 +221,13 @@
     display: none;
   }
   .description {
-    text-wrap: wrap;
-    max-width: 100%;
+    max-height: 200px;
+    font-size: 14px;
+    width: 100%;
+  }
+  .producers {
+    gap: 10px;
+    margin-top: 15px;
   }
   .tagline {
     font-size: 16px;
@@ -198,9 +245,13 @@
   .job {
     font-size: 14px;
   }
+  .description {
+    max-width: 100%;
+    font-size: 16px;
+  }
   .producers {
-    position: absolute;
-    left: 0;
+    margin-top: 15px;
+    position: static;
   }
   .genres {
     display: block;
@@ -212,19 +263,12 @@
   .genre {
     margin-right: 10px;
   }
-  .description {
-    max-width: 500px;
-  }
+
   .misc {
     flex-wrap: wrap;
     max-width: 500px;
   }
-  .producers {
-    margin-top: 10px;
-  }
-  .description {
-    font-size: 16px;
-  }
+
   .tagline {
     font-size: 18px;
   }
@@ -235,14 +279,11 @@
     left: 0;
   }
   .description {
-    max-width: 500px;
+    max-width: 100%;
   }
   .misc {
     flex-wrap: wrap;
     max-width: 500px;
-  }
-  .producers {
-    margin-top: 10px;
   }
 }
 

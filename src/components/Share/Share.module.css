@@ -1,0 +1,30 @@
+.shareContainer {
+  text-align: center;
+  padding: 16px;
+  background-color: #f2f2f2;
+}
+
+.shareTitle {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.shareButtons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.shareButton {
+  font-size: 1.5rem;
+  color: #555;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.shareButton:hover {
+  color: #007bff;
+}

@@ -115,22 +115,29 @@ export const getCurrentMovie = (movie_id, title) => async (dispatch) => {
     params: {
       ...defaultParams,
 
-      append_to_response: "keywords,reviews,external_ids,similar,credits,videos,images",
+      append_to_response: "keywords,reviews,external_ids,similar,credits,videos",
     },
   });
   let video_url = response.data.videos.results.filter(
     (video) => video.name === "Official Trailer" || video.name === "Trailer"
   )[0];
 
+  const image_response = await tmdb_api.get(`movie/${id}/images`, {
+    params: {
+      include_image_language: "en,null",
+    },
+  });
+
   dispatch(
     setCurrentMovie({
-      currentMovie: response.data,
+      currentMovie: {...response.data, images: image_response.data},
       keywords: response.data.keywords.keywords,
       socials: response.data.external_ids,
       reviews: response.data.reviews.results,
       similar: response.data.similar.results,
       credits: response.data.credits,
       video_url: video_url ? video_url : "",
+      images: image_response.data.backdrops,
     })
   );
   const resp = await omdb_api.get("/", {
@@ -238,10 +245,15 @@ export const getCurrentShow = (show_id) => async (dispatch) => {
   let video_url = response.data.videos.results.filter(
     (video) => video.name === "Official Trailer" || video.name === "Trailer"
   )[0];
+  const image_response = await tmdb_api.get(`tv/${show_id}/images`, {
+    params: {
+      include_image_language: "en,null",
+    },
+  });
 
   dispatch(
     setCurrentShow({
-      currentShow: response.data,
+      currentShow: {...response.data, images: image_response.data},
       keywords: response.data.keywords.results,
       socials: response.data.external_ids,
       reviews: response.data.reviews.results,

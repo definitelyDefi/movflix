@@ -1,18 +1,201 @@
 .container {
-  background-color: #343a40;
-  padding: 35px 35px 40px 35px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+  padding: 20px;
+  background-color: #121212;
+  color: white;
   min-height: 100vh;
 }
 
-.title {
-  margin-bottom: 50px;
-  text-align: center;
-  color: white;
-  font-family: "Poppins", serif;
-  font-weight: 400;
-  font-size: 35px;
+/* 📱 Adjust layout for tablets and mobile */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
 }
 
-.contentType {
-  font-weight: 600;
+/* 📱 Make Sidebar Responsive */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  gap: 20px;
+}
+
+/* Sidebar Title */
+.sidebarTitle {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Category Switcher */
+.categorySwitcher {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Buttons */
+.categoryButton {
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #2b2b2b;
+  border: none;
+  color: #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.categoryButton.active {
+  background-color: #ff6347;
+  color: #ffffff;
+  transform: scale(1.03);
+}
+
+.categoryButton:hover {
+  background-color: #e55a40;
+}
+
+/* 🔍 Filters */
+.filtersContainer {
+  background-color: #1c1c1c;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Adjust Filters for Mobile */
+@media (max-width: 768px) {
+  .filtersContainer {
+    padding: 12px;
+  }
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.filterGroup label {
+  font-size: 14px;
+  color: #ddd;
+  margin-bottom: 6px;
+}
+
+.input,
+.select {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #2b2b2b;
+  color: white;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: #ff4500;
+}
+
+/* Genre Checkboxes */
+.genreCheckboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Apply Button */
+.applyButton {
+  margin-top: 20px;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #ff4500;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.applyButton:hover {
+  background-color: #e03e00;
+  transform: translateY(-2px);
+}
+
+/* 🏗 Main Content */
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 🖼 Grid System */
+.typeItemsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* 📱 Grid adjusts for mobile */
+@media (max-width: 768px) {
+  .typeItemsContainer {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+.pagesSwitcher {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* 🔘 Content Type Switcher */
+.contentTypeSwitcher {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 6px;
+  background-color: #242424;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.contentTypeButton {
+  flex: 1;
+  padding: 10px 14px;
+  margin: 0 5px;
+  background-color: #3a3a3a;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.contentTypeButton:hover {
+  background-color: #505050;
+}
+
+.contentTypeButton.active {
+  background-color: #1e90ff;
+  color: #ffffff;
+  transform: scale(1.08);
 }

@@ -4,12 +4,5 @@
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 50px;
-}
-
-@media (max-width: 500px) {
-  .items {
-    display: grid;
-    grid-template-columns: 120px 120px;
-    /* grid-template-rows: 0.1fr 0.4fr; */
-  }
+  justify-content: center;
 }

@@ -1,58 +1,87 @@
-.burgerLink {
-  border: none;
-  outline: none;
-  background-color: transparent;
-  color: white;
-  font-size: 20px;
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
 }
 
 .burgerMenuWrapper {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-}
-.burgerItem {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
+  gap: 1rem;
 }
 
-.container {
+.burgerItem {
   width: 100%;
-  height: 100%;
-  background-color: #343a40;
+  text-align: center;
+  margin: 0 auto;
 }
-.searchBar {
-  padding-right: 25px;
-  max-width: 350px;
-  color: white;
-  border: 0;
-  border-bottom: 2px solid #9b9b9b;
-  outline: 0;
+
+.dropdownToggle {
+  width: 200px;
+  background-color: transparent;
+  color: var(--text-color);
   font-size: 1rem;
-  color: #fff;
-  padding: 7px 0;
-  background: transparent;
-  font-family: "Poppins", serif;
-}
-.submitButton {
-  background: transparent;
-  outline: none;
   border: none;
-  position: absolute;
-  right: 0;
-  bottom: 10px;
 }
-.submitButton:hover path {
-  fill: #04a6da;
-  transition: 0.3s all ease;
+
+.dropdown-menu {
+  background-color: var(--dropdown-bg);
+  border: none;
 }
-.searchBar::placeholder {
-  color: white;
+
+.dropdown-item {
+  color: var(--text-color);
+}
+
+.dropdown-item:hover {
+  background-color: var(--accent-color);
+  color: var(--button-text-color);
 }
 
 .searchField {
   position: relative;
+  margin: 2rem auto;
   width: fit-content;
-  margin: 0 auto 50px auto;
+}
+
+.searchBar {
+  max-width: 350px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--border-color);
+  outline: none;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  color: var(--text-color);
+  background: var(--input-bg);
+  font-family: "Roboto", serif;
+  border-radius: 4px;
+  padding-left: 10px;
+  transition: background 0.3s ease;
+}
+
+.searchBar::placeholder {
+  color: var(--text-color);
+  opacity: 0.6;
+}
+
+.searchBar:focus {
+  background: var(--bg-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.submitButton {
+  position: absolute;
+  right: 10px;
+  bottom: 0.6rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.submitButton:hover svg path {
+  fill: var(--accent-color);
+  transition: 0.3s ease;
 }

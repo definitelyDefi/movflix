@@ -28,15 +28,21 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Movflix</title>
     <script type="text/javascript">
-      (function(l) {
+      (function (l) {
         if (l.search[1] === "/") {
           var decoded = l.search
             .slice(1)
             .split("&")
-            .map(function(s) {
+            .map(function (s) {
               return s.replace(/~and~/g, "&");
             })
             .join("?");

@@ -1,19 +1,15 @@
 import React from "react";
-import {
-  CatalogueMain,
-  MoviePage,
-  Results,
-  ResultsExpanded,
-  ShowPage,
-  SeasonsPage,
-  EpisodesPage,
-  CastPageShow,
-  CastPageMovie,
-  PersonPage,
-  TypeExpanded,
-  AboutPage,
-} from "./pages";
-import { Discover } from "./pages/discoverPage/discover";
+import {CatalogueMain, SeasonsPage, EpisodesPage, PersonPage, TypeExpanded, AboutPage} from "./pages";
+
+import {ContentPage} from "./pages/contentPage/contentPage";
+import {CastPage} from "./pages/castPage/castPage";
+import {RecommendationsPage} from "./pages/recommendationsPage/recommendationsPage";
+import {AuthCallback} from "./components/authCallback/AuthCallback";
+import {ProfilePage} from "./pages/profilePage/ProfilePage";
+import {LoginPage} from "./pages/loginPage/LoginPage";
+import {CollectionPage} from "./pages/collectionPage/collectionPage";
+import {SettingsPage} from "./pages/SettingsPage/SettingPage";
+import {FavoriteWatchlistPage} from "./pages/FavoriteWatchlistPage/FavoriteWatchlistPage";
 
 export const routes = [
   {
@@ -29,54 +25,50 @@ export const routes = [
     component: CatalogueMain,
   },
   {
-    path: "/movflix/movie/page/*",
-    component: MoviePage,
-  },
-  {
-    path: "/movflix/person/page/:id/:name",
+    path: "/movflix/person", //  /movflix/person?id=123
     component: PersonPage,
   },
   {
-    path: "/movflix/tv/page/:id/:title",
-    component: ShowPage,
-  },
-  { path: "/movflix/discover/:content_type/:filter/:filterName/:filterType", component: Discover },
-  {
-    path: "/movflix/movie/page/:id/:title/cast_crew",
-    component: CastPageMovie,
+    path: "/movflix/page", //  /movflix/page?content_type=tv&id=123&title=blablabla
+    component: ContentPage,
   },
   {
-    path: "/movflix/tv/page/:id/:title/cast_crew",
-    component: CastPageShow,
+    path: "/movflix/cast_crew", //  /movflix/cast_crew?content_type=tv&id=123&title=blablabla
+    component: CastPage,
   },
   {
-    path: "/movflix/tv/page/:id/:title/seasons",
+    path: "/movflix/seasons", //  /movflix/seasons?id=123&title=blablabla
     component: SeasonsPage,
   },
   {
-    path: "/movflix/tv/page/:id/:title/seasons/:season",
+    path: "/movflix/episodes", //  /movflix/episodes?id=123&title=blablabla&season_id=123
     component: EpisodesPage,
   },
   {
-    path: "/movflix/search/*",
-    component: Results,
-  },
-  {
-    path: "/movflix/search/expand/:query/:content_type",
-    component: ResultsExpanded,
-  },
-  {
-    path: "/movflix/categories/:content_type/:category/*",
+    path: "/movflix/discover/*",
     component: TypeExpanded,
   },
   {
-    path: "/mofvlix/about",
+    path: "/movflix/about",
     component: AboutPage,
   },
+  {
+    path: "/movflix/recommendations",
+    component: RecommendationsPage,
+  },
+  {path: "/movflix/login", component: LoginPage},
+  {
+    path: "/movflix/auth_callback",
+    component: AuthCallback,
+  },
+  {path: "/movflix/profile", component: ProfilePage},
+  {path: "/movflix/collection", component: CollectionPage},
+  {path: "/movflix/settings", component: SettingsPage},
+  {path: "/movflix/lists", component: FavoriteWatchlistPage},
 ];
 
 export default function withComponent(Component) {
-  return function() {
+  return function () {
     return <Component />;
   };
 }

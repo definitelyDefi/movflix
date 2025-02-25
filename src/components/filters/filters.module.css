@@ -1,0 +1,149 @@
+.filtersContainer {
+  background: #1e1e1e;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 300px;
+  font-family: Arial, sans-serif;
+}
+
+/* 📱 Adjust size for tablets */
+@media (max-width: 1024px) {
+  .filtersContainer {
+    max-width: 250px;
+    padding: 15px;
+  }
+}
+
+/* 📱 Make it full width for mobile */
+@media (max-width: 768px) {
+  .filtersContainer {
+    max-width: 100%;
+    padding: 15px;
+  }
+}
+
+/* Title */
+.filtersTitle {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* 📏 Adjust title for smaller screens */
+@media (max-width: 768px) {
+  .filtersTitle {
+    font-size: 1.3em;
+  }
+}
+
+/* Filter Groups */
+.filterGroup {
+  margin-bottom: 15px;
+}
+
+.filterGroup label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Select & Input */
+.select,
+.input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #2b2b2b;
+  color: #fff;
+}
+
+/* 📱 Bigger touch targets on mobile */
+@media (max-width: 768px) {
+  .select,
+  .input {
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
+
+/* 🎭 Genre Checkboxes */
+.genreCheckboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Checkbox Labels */
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+/* Checkbox Text */
+.checkboxText {
+  font-size: 0.9em;
+}
+
+/* 📱 Adjust checkboxes for mobile */
+@media (max-width: 768px) {
+  .checkboxText {
+    font-size: 1em;
+  }
+}
+
+/* Toggle Switch */
+.switchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+/* 📏 Make switch buttons bigger on mobile */
+@media (max-width: 768px) {
+  .switchContainer {
+    gap: 15px;
+  }
+}
+
+/* Switch */
+.switch {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background: #555;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+/* Toggle Animation */
+.slider {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: #ff4757;
+  border-radius: 50%;
+  top: 1px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Toggle Positions */
+.slider.tv {
+  transform: translateX(0);
+}
+
+.slider.movies {
+  transform: translateX(30px);
+}
+
+/* Active State */
+.active {
+  font-weight: bold;
+  color: #ff4757;
+}

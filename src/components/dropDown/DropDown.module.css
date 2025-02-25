@@ -1,0 +1,43 @@
+.dropDown {
+  position: relative;
+}
+
+.withDropdown {
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  background: none;
+  border: none;
+}
+
+.dropDownContent {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1c1c1c;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 10;
+  display: none;
+  width: 120px;
+}
+
+.dropDown:hover .dropDownContent {
+  display: block;
+}
+
+.linkDropdown {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background: none;
+  border: none;
+
+  padding: 10px 0;
+  font-size: 16px;
+}
+
+.linkDropdown:hover {
+  color: #e50914;
+}

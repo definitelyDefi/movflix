@@ -1,0 +1,113 @@
+.container {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.castBlock {
+  padding-top: 75px;
+  width: 1500px;
+  height: 460px;
+}
+
+.headerWithButton {
+  display: flex;
+  gap: 50px;
+  align-items: center; /* Vertically align items */
+  margin-bottom: 30px; /* Space below the header and button */
+}
+
+.castHeader {
+  margin: 0; /* Remove default margin for alignment */
+  font-weight: 500;
+  font-size: 30px;
+  font-family: "Roboto", serif;
+}
+
+.viewFullCastButton {
+  text-decoration: none;
+  background-color: #339dff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.viewFullCastButton:hover {
+  background-color: #287dc9; /* Slightly darker shade for hover */
+  color: white;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 500px) {
+  .container {
+    margin-left: 5px;
+    margin-top: 30px;
+    overflow: hidden;
+  }
+  .details {
+    width: 100%;
+    justify-content: left;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 926px) and (min-width: 500px) {
+  .details {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1168px) and (min-width: 926px) {
+  .details {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1380px) and (min-width: 1168px) {
+  .details {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1792px) and (min-width: 1168px) {
+  .details {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+/* ImageGallery.module.css */
+
+.imageBlock {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 10px; /* Base height for each row */
+  gap: 10px;
+  padding: 10px;
+}
+
+/* Base styles for each image item */
+.imageItem {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+/* Image styling to fit container */
+.imageItem img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}

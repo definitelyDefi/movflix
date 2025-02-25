@@ -14,7 +14,7 @@
 .episodeMisc {
   font-size: 1em;
   font-weight: 600;
-  font-family: "Poppins", serif;
+  font-family: "Roboto", serif;
 }
 .episodeImage {
   width: 227px;
@@ -25,12 +25,12 @@
 .episodeTitle {
   font-weight: 600;
   font-size: 1.5em;
-  font-family: "Poppins", serif;
+  font-family: "Roboto", serif;
   display: inline;
 }
 
 .episodeDescription {
-  font-family: "Poppins", serif;
+  font-family: "Roboto", serif;
   margin-top: 20px;
   display: block;
   max-width: 950px;

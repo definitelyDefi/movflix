@@ -1,0 +1,40 @@
+html,
+body {
+  overscroll-behavior: none;
+  font-family: "Roboto", serif !important;
+}
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #007bff;
+  --secondary-color: #339dff;
+  --accent-color: #04a6da;
+  --border-color: rgba(227, 227, 227, 1);
+  --hover-opacity: 0.7;
+  --button-text-color: #fff;
+  --card-bg: #fff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --dropdown-bg: #f8f9fa;
+  --input-bg: #f1f1f1;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --primary-color: #1e90ff;
+  --secondary-color: #339dff;
+  --accent-color: #04a6da;
+  --border-color: rgba(60, 60, 60, 1);
+  --hover-opacity: 0.85;
+  --button-text-color: #fff;
+  --card-bg: #1c1c1c;
+  --card-shadow: rgba(255, 255, 255, 0.05);
+  --dropdown-bg: #222;
+  --input-bg: #292929;
+}
+
+body {
+  /* background-color: var(--bg-color);
+  color: var(--text-color); */
+}

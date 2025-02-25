@@ -1,0 +1,89 @@
+.container {
+  position: relative;
+  font-family: "Roboto", serif;
+  color: white;
+  overflow: hidden;
+}
+
+.wrapper {
+  background-color: #f2f2f2;
+}
+
+.backgroundImage {
+  position: absolute;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  margin: 0 150px;
+  padding-top: 65px;
+  gap: 55px;
+  height: 800px;
+  overflow: hidden;
+}
+
+.posterImage {
+  width: 300px;
+  height: 450px;
+  border-radius: 10px;
+}
+
+.infoWrapper {
+  margin-left: 60px;
+}
+
+@media (max-width: 500px) {
+  .content {
+    flex-direction: column;
+    padding-top: 20px;
+    margin: 0px;
+    justify-content: center;
+    height: fit-content;
+  }
+
+  .backgroundImage {
+    height: 100%;
+    width: 100%;
+  }
+
+  .posterImage {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 926px) and (min-width: 500px) {
+  .posterImage {
+    width: 210px;
+    height: 360px;
+  }
+
+  .content {
+    margin: 0 10px;
+    padding-top: 20px;
+  }
+
+  .misc {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 1168px) and (min-width: 926px) {
+  .posterImage {
+    width: 230px;
+    height: 380px;
+  }
+
+  .content {
+    margin: 0 10px;
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 1380px) and (min-width: 1168px) {
+  .content {
+    margin: 0 50px;
+  }
+}

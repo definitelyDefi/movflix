@@ -22,11 +22,6 @@ Welcome to **MovFlix**, the ultimate destination for discovering movies and TV s
 
 ---
 
-## 📸 Screenshots
-![MovFlix Homepage](https://via.placeholder.com/800x400)
-
----
-
 ## 🚀 Installation & Setup
 
 ### 🔹 Clone the Repository
